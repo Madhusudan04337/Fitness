@@ -1,0 +1,6 @@
+{
+  "name": "Hyperfit",
+  "description": "A high-performance gym and fitness platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
