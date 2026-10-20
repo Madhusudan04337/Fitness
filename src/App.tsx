@@ -5,6 +5,7 @@
 
 import Header from './components/Header';
 import Hero from './components/Hero';
+import CompanyTrustAndAbout from './components/CompanyTrustAndAbout';
 import Services from './components/Services';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
@@ -15,6 +16,7 @@ export default function App() {
     <div className="min-h-screen bg-neutral-950 font-sans text-neutral-100">
       <Header />
       <Hero />
+      <CompanyTrustAndAbout />
       <Services />
       <Testimonials />
       <FAQ />
