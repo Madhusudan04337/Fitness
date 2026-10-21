@@ -27,10 +27,10 @@ export default function FitnessCalculator() {
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-8">
           <div className="text-neutral-500 text-xs font-mono tracking-[0.25em] mb-2 uppercase">TELEMETRY // PHYSIOLOGY ENGINE</div>
-          <h2 className="text-4xl sm:text-5xl font-black tracking-tight">
+          <h2 className="font-heading text-4xl sm:text-5xl font-black tracking-tight">
             FITNESS METRICS <span className="text-[#FF6B00]">TOOL</span>
           </h2>
-          <p className="text-neutral-400 text-sm mt-2">Instant BMI calculation calibrated to athletic body profiles.</p>
+          <p className="text-neutral-400 text-sm mt-2 font-mono text-neutral-400">Instant BMI calculation calibrated to athletic body profiles.</p>
         </div>
 
         <div className="p-8 sm:p-10 rounded-2xl bg-neutral-900/40 border border-neutral-800/80 shadow-2xl backdrop-blur-sm">
@@ -59,11 +59,11 @@ export default function FitnessCalculator() {
 
           <motion.button
             onClick={calculateBMI}
-            className="w-full bg-[#FF6B00] text-black px-6 py-4 font-black rounded-lg text-sm tracking-widest uppercase hover:bg-[#FFA500] transition-colors cursor-pointer"
+            className="font-mono w-full bg-[#FF6B00] text-black px-6 py-4 font-black rounded-lg text-sm tracking-widest uppercase hover:bg-[#FFA500] transition-colors cursor-pointer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            CALCULATE METRICS
+            CALCULATE METRICS // RUN TELEMETRY
           </motion.button>
 
           {bmi && category && (

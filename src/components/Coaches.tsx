@@ -32,7 +32,7 @@ export default function Coaches() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
           <div>
             <div className="text-neutral-500 text-xs font-mono tracking-[0.25em] mb-2 uppercase">MASTER FACULTY // ATHLETIC DIRECTORS</div>
-            <h2 className="text-4xl sm:text-5xl font-black tracking-tight">
+            <h2 className="font-heading text-4xl sm:text-5xl font-black tracking-tight">
               GUIDED BY EXPERTS,<br />
               <span className="text-[#FF6B00]">DRIVEN BY YOU.</span>
             </h2>
@@ -47,13 +47,13 @@ export default function Coaches() {
             <motion.div
               key={coach.name}
               className="group rounded-2xl border border-neutral-800/80 bg-neutral-900/40 hover:bg-neutral-900/90 overflow-hidden transition-all duration-300"
-              whileHover={{ y: -6, borderColor: 'rgba(255,107,0,0.5)' }}
+              whileHover={{ y: -8, borderColor: 'rgba(255,107,0,0.5)' }}
             >
               <div className="relative w-full h-72 overflow-hidden bg-neutral-900">
                 <img
                   src={coach.image}
                   alt={coach.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter contrast-110"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter grayscale group-hover:grayscale-0 contrast-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent" />
                 <div className="absolute top-3 right-3 px-2.5 py-1 rounded bg-black/80 border border-neutral-700/80 backdrop-blur-sm text-[10px] font-mono text-[#FF6B00] font-bold">
@@ -65,7 +65,7 @@ export default function Coaches() {
                 <div className="text-[#FF6B00] font-mono text-xs font-bold tracking-wider mb-1 uppercase">
                   {coach.role}
                 </div>
-                <h3 className="text-2xl font-black text-white mb-2">{coach.name}</h3>
+                <h3 className="font-heading text-2xl font-black text-white mb-2 tracking-tight">{coach.name}</h3>
                 <p className="text-neutral-400 text-sm leading-relaxed">{coach.expertise}</p>
               </div>
             </motion.div>

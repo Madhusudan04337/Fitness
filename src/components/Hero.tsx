@@ -38,10 +38,10 @@ export default function Hero() {
       {/* Main Center Content */}
       <div className="relative z-10 flex flex-col items-center max-w-5xl mx-auto my-auto py-6">
         <motion.h1
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.92] mb-6 select-none"
+          initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.92] mb-6 select-none"
         >
           TRAIN LIKE
           <br />
@@ -52,9 +52,9 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.25, ease: 'easeOut' }}
           className="text-lg md:text-2xl text-neutral-300 max-w-3xl mb-8 leading-relaxed font-light"
         >
           Precision coaching, mechanical barbells, and science-backed recovery tailored to your physiology — built by athletes for those who value progress over perfection.

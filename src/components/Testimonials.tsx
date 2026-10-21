@@ -35,34 +35,40 @@ export default function Testimonials() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="text-neutral-500 text-xs font-mono tracking-[0.25em] mb-2 uppercase">MEMBER VOICES // TESTIMONIALS</div>
-          <h2 className="text-4xl sm:text-5xl font-black mb-3 tracking-tight">
+          <h2 className="font-heading text-4xl sm:text-5xl font-black mb-3 tracking-tight">
             BECAUSE STAYING FIT<br />
             <span className="text-[#FF6B00]">SHOULD FEEL GOOD.</span>
           </h2>
-          <p className="text-neutral-400 text-base">Just a high-standard community where you can grow — your way.</p>
+          <p className="text-neutral-400 text-base font-light">Just a high-standard community where you can grow — your way.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((item, idx) => (
             <motion.div
               key={item.name}
-              whileHover={{ y: -6, borderColor: 'rgba(255,107,0,0.5)' }}
-              className="relative p-7 rounded-xl border border-neutral-800/80 bg-neutral-900/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+              whileHover={{ y: -8, borderColor: 'rgba(255,107,0,0.5)', backgroundColor: 'rgba(23,23,23,0.85)' }}
+              transition={{ duration: 0.25 }}
+              className="relative p-7 rounded-xl border border-neutral-800/80 bg-neutral-900/40 transition-all flex flex-col justify-between shadow-lg"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex text-[#FF6B00] text-sm tracking-wider font-mono">
                     ★★★★★ <span className="ml-2 text-neutral-400 text-xs">{item.rating}</span>
                   </div>
-                  <Quote className="w-5 h-5 text-neutral-700" />
+                  <motion.div
+                    animate={{ y: [0, -4, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: idx * 0.4 }}
+                  >
+                    <Quote className="w-5 h-5 text-[#FF6B00]/60" />
+                  </motion.div>
                 </div>
-                <p className="text-neutral-300 text-sm md:text-base leading-relaxed mb-6 italic">
+                <p className="font-editorial italic text-lg md:text-xl text-neutral-200 leading-relaxed mb-6">
                   "{item.quote}"
                 </p>
               </div>
 
               <div className="pt-4 border-t border-neutral-900">
-                <div className="font-extrabold text-white text-base tracking-wide">{item.name}</div>
+                <div className="font-heading font-black text-white text-base tracking-wide">{item.name}</div>
                 <div className="text-xs text-neutral-500 font-mono mt-0.5">{item.role} • {item.date}</div>
                 <div className="flex flex-wrap gap-1.5 mt-3">
                   {item.tags.map((t) => (

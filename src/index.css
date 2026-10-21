@@ -17,6 +17,19 @@ html {
 }
 
 body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.font-heading {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+.font-editorial {
+  font-family: 'Newsreader', Georgia, serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
 }

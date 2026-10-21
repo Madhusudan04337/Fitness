@@ -42,19 +42,19 @@ export default function Services() {
         {/* Left - Sticky Hero Context */}
         <div className="lg:col-span-5 lg:sticky lg:top-28">
           <div className="text-neutral-500 text-xs font-mono tracking-[0.25em] mb-3 uppercase">OUR SERVICES</div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-4 leading-[1.05]">
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-4 leading-[1.05]">
             <span className="text-[#FF6B00]">NOT JUST WORKOUTS.</span>
             <br />
             A WHOLE APPROACH.
           </h2>
-          <p className="text-neutral-400 text-base md:text-lg mb-8 leading-relaxed">
+          <p className="text-neutral-400 text-base md:text-lg mb-8 leading-relaxed font-light">
             From personal training to nutrition and recovery — we cover what your body truly needs for sustained physical output.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 mb-8">
             <a
               href="#pricing"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-bold text-xs tracking-wider uppercase hover:bg-[#FF6B00] hover:text-white transition-colors"
+              className="font-heading inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-black text-xs tracking-wider uppercase hover:bg-[#FF6B00] hover:text-white transition-colors"
             >
               EXPLORE PRICING
               <ArrowUpRight className="w-4 h-4" />
@@ -63,7 +63,7 @@ export default function Services() {
               onClick={() => {
                 document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-neutral-700 bg-neutral-900/60 text-white font-bold text-xs tracking-wider uppercase hover:bg-neutral-800 transition-colors"
+              className="font-heading inline-flex items-center gap-2 px-6 py-3 rounded-full border border-neutral-700 bg-neutral-900/60 text-white font-bold text-xs tracking-wider uppercase hover:bg-neutral-800 transition-colors"
             >
               WATCH VIDEO
               <Play className="w-3 h-3 fill-current text-[#FF6B00]" />
@@ -80,9 +80,9 @@ export default function Services() {
           {services.map((service) => (
             <motion.div
               key={service.id}
-              whileHover={{ x: 6, borderColor: 'rgba(255,107,0,0.5)' }}
+              whileHover={{ x: 8, borderColor: 'rgba(255,107,0,0.5)', backgroundColor: 'rgba(23,23,23,0.8)' }}
               transition={{ duration: 0.2 }}
-              className="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 rounded-xl border border-neutral-800/80 bg-neutral-900/50 hover:bg-neutral-900 transition-all shadow-md gap-6"
+              className="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 rounded-xl border border-neutral-800/80 bg-neutral-900/50 transition-all shadow-md gap-6 cursor-default"
             >
               <div className="flex items-center gap-5 flex-1">
                 <div className="w-20 h-20 rounded-lg overflow-hidden shrink-0 border border-neutral-800">
@@ -93,13 +93,13 @@ export default function Services() {
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl font-extrabold text-white group-hover:text-[#FF6B00] transition-colors mb-1.5">
+                  <h3 className="font-heading text-xl font-black text-white group-hover:text-[#FF6B00] transition-colors mb-1.5 tracking-tight">
                     {service.title}
                   </h3>
                   <p className="text-neutral-400 text-sm leading-relaxed">{service.description}</p>
                 </div>
               </div>
-              <div className="text-4xl lg:text-5xl font-mono font-black text-neutral-700 group-hover:text-white transition-colors shrink-0">
+              <div className="font-mono text-4xl lg:text-5xl font-black text-neutral-700 group-hover:text-white transition-colors shrink-0">
                 {service.id}
               </div>
             </motion.div>

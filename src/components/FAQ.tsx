@@ -31,10 +31,10 @@ export default function FAQ() {
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-10">
           <div className="text-neutral-500 text-xs font-mono tracking-[0.25em] mb-2 uppercase">INTELLIGENCE // FREQUENTLY ASKED</div>
-          <h2 className="text-4xl sm:text-5xl font-black tracking-tight">
+          <h2 className="font-heading text-4xl sm:text-5xl font-black tracking-tight">
             FREQUENTLY <span className="text-[#FF6B00]">ASKED</span>
           </h2>
-          <p className="text-neutral-400 text-sm mt-2">Everything you need to know before stepping onto the Hyperfit floor.</p>
+          <p className="text-neutral-400 text-sm mt-2 font-light">Everything you need to know before stepping onto the Hyperfit floor.</p>
         </div>
 
         <div className="space-y-3">
@@ -53,7 +53,7 @@ export default function FAQ() {
                   className="w-full text-left p-6 font-bold flex justify-between items-center gap-4 cursor-pointer focus:outline-none"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                 >
-                  <span className={`text-base sm:text-lg tracking-wide ${isOpen ? 'text-[#FF6B00]' : 'text-white'}`}>
+                  <span className={`font-heading text-base sm:text-lg tracking-wide ${isOpen ? 'text-[#FF6B00]' : 'text-white'}`}>
                     {faq.question}
                   </span>
                   <span
