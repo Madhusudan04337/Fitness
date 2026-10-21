@@ -10,12 +10,12 @@ export default function CompanyTrustAndAbout() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-neutral-950 text-white">
-      <div className="max-w-5xl mx-auto text-center mb-16">
-        <div className="text-neutral-500 text-xs tracking-widest mb-6">TRUSTED BY ENTERPRISE LEADERS</div>
-        <div className="flex flex-wrap justify-center gap-8 text-neutral-400 font-bold">
+    <section id="about" className="py-12 lg:py-16 px-6 bg-neutral-950 text-white">
+      <div className="max-w-5xl mx-auto text-center mb-10">
+        <div className="text-neutral-500 text-xs tracking-widest mb-4 uppercase">TRUSTED BY ENTERPRISE ATHLETES & LEADERS</div>
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-14 text-neutral-400 font-bold text-sm md:text-base">
           {brands.map((brand, i) => (
-            <span key={brand} className="flex items-center gap-2">
+            <span key={brand} className="flex items-center gap-2 hover:text-white transition-colors cursor-default">
               {i === 2 && <span className="w-2 h-2 rounded-full bg-[#FF6B00]"></span>}
               {brand}
             </span>
@@ -23,10 +23,10 @@ export default function CompanyTrustAndAbout() {
         </div>
       </div>
 
-      <div className="max-w-3xl mx-auto text-center mb-16">
-        <div className="text-[#FF6B00] text-sm tracking-[0.2em] uppercase mb-4 font-semibold">Not Just a Gym.</div>
-        <h2 className="text-6xl font-extrabold mb-6 tracking-tight">A PLACE TO BELONG.</h2>
-        <p className="text-neutral-400 text-xl leading-relaxed max-w-2xl mx-auto">
+      <div className="max-w-3xl mx-auto text-center mb-10">
+        <div className="text-[#FF6B00] text-xs md:text-sm tracking-[0.25em] uppercase mb-2 font-semibold">Not Just a Gym.</div>
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">A PLACE TO BELONG.</h2>
+        <p className="text-neutral-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
           We're more than just a gym. We're a space built for every kind of journey — whether you're just starting or looking to push your limits. Here, it's not about perfection. It's about progress, your way.
         </p>
       </div>

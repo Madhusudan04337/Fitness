@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-neutral-400 py-12 px-6 border-t border-neutral-900">
+    <footer id="contact" className="bg-neutral-950 text-neutral-400 py-12 px-6 border-t border-neutral-900">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         <div>
           <h3 className="text-white font-bold mb-4">HYPERFIT</h3>
