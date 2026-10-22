@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 
 const coaches = [
   {
@@ -28,7 +29,13 @@ export default function Coaches() {
   return (
     <section id="coaches" className="py-16 lg:py-24 px-6 bg-[var(--theme-bg)] text-[var(--theme-text-main)] overflow-hidden transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col md:flex-row md:items-end justify-between mb-12"
+        >
           <div>
             <div className="text-[var(--theme-accent)] text-xs font-mono tracking-[0.25em] mb-2 uppercase font-semibold">
               OUR COACHES
@@ -41,12 +48,16 @@ export default function Coaches() {
           <p className="text-[var(--theme-text-muted)] text-sm max-w-sm mt-4 md:mt-0 font-light">
             Certified personal trainers with over a decade of real-world coaching experience.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {coaches.map((coach) => (
-            <div
+          {coaches.map((coach, index) => (
+            <motion.div
               key={coach.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-30px' }}
+              transition={{ duration: 0.45, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="group rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] overflow-hidden shadow-sm cursor-default athletic-card"
             >
               <div className="relative w-full h-72 overflow-hidden bg-[var(--theme-surface-solid)]">
@@ -70,7 +81,7 @@ export default function Coaches() {
                 <h3 className="font-heading text-2xl font-black text-[var(--theme-text-main)] mb-2 tracking-tight">{coach.name}</h3>
                 <p className="text-[var(--theme-text-muted)] text-sm leading-relaxed">{coach.expertise}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

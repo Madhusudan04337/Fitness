@@ -73,7 +73,7 @@ export default function FeedbackSection() {
   return (
     <section
       id="feedback"
-      className="relative w-full py-16 lg:py-24 px-4 sm:px-6 lg:px-12 bg-[var(--theme-bg)] text-[var(--theme-text-main)] overflow-hidden transition-colors duration-300"
+      className="relative w-full py-16 lg:py-24 px-4 sm:px-6 lg:px-12 bg-[var(--theme-bg)] text-[var(--theme-text-main)] overflow-hidden transition-colors duration-300 animate-quick-fade"
     >
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}

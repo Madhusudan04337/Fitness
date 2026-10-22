@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { ArrowUpRight, Play } from 'lucide-react';
 
 const services = [
@@ -39,7 +40,13 @@ export default function Services() {
     <section id="services" className="py-16 lg:py-24 px-6 bg-[var(--theme-bg)] text-[var(--theme-text-main)] overflow-hidden transition-colors duration-300">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         {/* Left - Sticky Hero Context */}
-        <div className="lg:col-span-5 lg:sticky lg:top-28">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-5 lg:sticky lg:top-28"
+        >
           <div className="text-[var(--theme-accent)] text-xs font-mono tracking-[0.25em] mb-3 uppercase font-semibold">
             WHAT WE OFFER
           </div>
@@ -77,13 +84,17 @@ export default function Services() {
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--theme-accent)] animate-live-pulse" />
             <span>Comprehensive coaching, nutrition, and recovery under one roof.</span>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right - Service Rows */}
         <div className="lg:col-span-7 flex flex-col gap-5">
-          {services.map((service) => (
-            <div
+          {services.map((service, index) => (
+            <motion.div
               key={service.id}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-30px' }}
+              transition={{ duration: 0.4, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] hover:translate-x-1.5 transition-all duration-200 shadow-sm gap-6 cursor-default athletic-card"
             >
               <div className="flex items-center gap-5 flex-1">
@@ -106,7 +117,7 @@ export default function Services() {
               <div className="font-mono text-2xl font-black text-[var(--theme-text-muted)] opacity-40 group-hover:opacity-100 group-hover:text-[var(--theme-accent)] transition-all self-end sm:self-center">
                 {service.id}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

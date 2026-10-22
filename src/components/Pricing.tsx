@@ -126,7 +126,7 @@ export default function Pricing() {
   return (
     <section
       id="pricing"
-      className="relative w-full py-20 lg:py-28 px-6 lg:px-12 bg-[var(--theme-bg)] text-[var(--theme-text-main)] overflow-hidden transition-colors duration-300"
+      className="relative w-full py-20 lg:py-28 px-6 lg:px-12 bg-[var(--theme-bg)] text-[var(--theme-text-main)] overflow-hidden transition-colors duration-300 animate-quick-fade"
     >
       <div className="relative max-w-7xl mx-auto flex flex-col items-center">
         {/* Section Header */}

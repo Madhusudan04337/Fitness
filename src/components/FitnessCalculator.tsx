@@ -22,7 +22,7 @@ export default function FitnessCalculator() {
   const category = bmi ? getCategory(bmi) : null;
 
   return (
-    <section id="calculator" className="py-16 lg:py-24 px-6 bg-[var(--theme-bg)] text-[var(--theme-text-main)] overflow-hidden transition-colors duration-300">
+    <section id="calculator" className="py-16 lg:py-24 px-6 bg-[var(--theme-bg)] text-[var(--theme-text-main)] overflow-hidden transition-colors duration-300 animate-quick-fade">
       <div className="max-w-3xl mx-auto">
         {/* Header Block */}
         <div className="text-center mb-10">
