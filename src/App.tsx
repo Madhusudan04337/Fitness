@@ -34,120 +34,69 @@ export default function App() {
           {/* Page 01: Hero Cover */}
           <Hero />
 
-          {/* Page 02: About & Indiranagar Hub */}
+          {/* Section 01: About & Indiranagar Hub */}
           <FoldSection
             id="about"
-            pageIndex={2}
-            totalPages={10}
+            pageIndex={1}
+            totalPages={5}
             category="About Us"
             title="A Place to Belong"
-            nextId="services"
-            nextLabel="SCROLL TO SERVICES"
           >
             <CompanyTrustAndAbout />
           </FoldSection>
 
-          {/* Page 03: Services Matrix */}
+          {/* Section 02: Services Matrix & Community Ecosystem */}
           <FoldSection
             id="services"
-            pageIndex={3}
-            totalPages={10}
+            pageIndex={2}
+            totalPages={5}
             category="Training & Recovery"
             title="Our Services"
-            nextId="showcase"
-            nextLabel="SCROLL TO COMMUNITY"
           >
             <Services />
-          </FoldSection>
-
-          {/* Page 04: Lifestyle & Ecosystem */}
-          <FoldSection
-            id="showcase"
-            pageIndex={4}
-            totalPages={10}
-            category="Community & Wellness"
-            title="Beyond The Gym"
-            nextId="pricing"
-            nextLabel="SCROLL TO PRICING"
-          >
             <ServicesShowcase />
           </FoldSection>
 
-          {/* Page 05: Pricing Protocols */}
+          {/* Section 03: Pricing Protocols */}
           <FoldSection
             id="pricing"
-            pageIndex={5}
-            totalPages={10}
+            pageIndex={3}
+            totalPages={5}
             category="Memberships"
             title="Transparent Pricing"
-            nextId="testimonials"
-            nextLabel="SCROLL TO MEMBER STORIES"
           >
             <Pricing />
           </FoldSection>
 
-          {/* Page 06: Member Stories */}
+          {/* Section 04: Member Stories & Coaches */}
           <FoldSection
             id="testimonials"
-            pageIndex={6}
-            totalPages={10}
-            category="Community Reviews"
+            pageIndex={4}
+            totalPages={5}
+            category="Athlete Voices & Coaches"
             title="Member Stories"
-            nextId="coaches"
-            nextLabel="SCROLL TO COACHES"
           >
             <Testimonials />
+            <div id="coaches">
+              <Coaches />
+            </div>
           </FoldSection>
 
-          {/* Page 07: Master Faculty */}
-          <FoldSection
-            id="coaches"
-            pageIndex={7}
-            totalPages={10}
-            category="Trainers"
-            title="Our Coaches"
-            nextId="calculator"
-            nextLabel="SCROLL TO BMI CALCULATOR"
-          >
-            <Coaches />
-          </FoldSection>
-
-          {/* Page 08: Performance Metric */}
-          <FoldSection
-            id="calculator"
-            pageIndex={8}
-            totalPages={10}
-            category="Health Tools"
-            title="BMI Calculator"
-            nextId="faq"
-            nextLabel="SCROLL TO FAQ"
-          >
-            <FitnessCalculator />
-          </FoldSection>
-
-          {/* Page 09: Intelligence & FAQ */}
+          {/* Section 05: Intelligence, Tools & Global Hubs */}
           <FoldSection
             id="faq"
-            pageIndex={9}
-            totalPages={10}
-            category="Help & Support"
+            pageIndex={5}
+            totalPages={5}
+            category="FAQ & Support"
             title="Frequently Asked Questions"
-            nextId="contact"
-            nextLabel="SCROLL TO CONTACT"
           >
             <FAQ />
-          </FoldSection>
-
-          {/* Page 10: Global Hubs & Footer */}
-          <FoldSection
-            id="contact"
-            pageIndex={10}
-            totalPages={10}
-            category="Locations"
-            title="Bangalore & Dubai"
-            showBottomArrow={false}
-          >
-            <Footer />
+            <div id="calculator">
+              <FitnessCalculator />
+            </div>
+            <div id="contact">
+              <Footer />
+            </div>
           </FoldSection>
         </main>
       </div>

@@ -31,52 +31,26 @@ export default function FAQ() {
     <section id="faq" className="py-16 lg:py-24 px-6 bg-[var(--theme-bg)] text-[var(--theme-text-main)] overflow-hidden transition-colors duration-300">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[var(--theme-accent)] text-xs font-mono tracking-[0.25em] mb-2 uppercase font-semibold"
-          >
+          <div className="text-[var(--theme-accent)] text-xs font-mono tracking-[0.25em] mb-2 uppercase font-semibold">
             COMMON QUESTIONS
-          </motion.div>
+          </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="font-heading text-4xl sm:text-5xl font-black tracking-tight"
-          >
+          <h2 className="font-heading text-4xl sm:text-5xl font-black tracking-tight">
             FREQUENTLY <span className="text-[var(--theme-accent)]">ASKED</span>
-          </motion.h2>
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.65, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[var(--theme-text-muted)] text-sm mt-2 font-light"
-          >
+          <p className="text-[var(--theme-text-muted)] text-sm mt-2 font-light">
             Everything you need to know about joining and training with Hyperfit.
-          </motion.p>
+          </p>
         </div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 45 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.15 }}
-                transition={{
-                  duration: 0.55,
-                  delay: index * 0.1,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                   isOpen
                     ? 'border-[var(--theme-accent)] bg-[var(--theme-surface)] shadow-md'
                     : 'border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)]/50'
@@ -105,14 +79,14 @@ export default function FAQ() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25 }}
+                      transition={{ duration: 0.2 }}
                       className="px-6 pb-6 pt-1 text-[var(--theme-text-muted)] text-sm leading-relaxed border-t border-[var(--theme-border)] mt-1"
                     >
                       {faq.answer}
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </div>
             );
           })}
         </div>

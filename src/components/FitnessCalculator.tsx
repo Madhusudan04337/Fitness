@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
 
 export default function FitnessCalculator() {
   const [weight, setWeight] = useState('75');
@@ -27,53 +26,23 @@ export default function FitnessCalculator() {
       <div className="max-w-3xl mx-auto">
         {/* Header Block */}
         <div className="text-center mb-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[var(--theme-accent)] text-xs font-mono tracking-[0.25em] mb-2 uppercase font-semibold"
-          >
+          <div className="text-[var(--theme-accent)] text-xs font-mono tracking-[0.25em] mb-2 uppercase font-semibold">
             FITNESS TOOLS
-          </motion.div>
+          </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="font-heading text-4xl sm:text-5xl font-black tracking-tight"
-          >
+          <h2 className="font-heading text-4xl sm:text-5xl font-black tracking-tight">
             BMI <span className="text-[var(--theme-accent)]">CALCULATOR</span>
-          </motion.h2>
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.65, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[var(--theme-text-muted)] text-sm mt-2 font-light"
-          >
+          <p className="text-[var(--theme-text-muted)] text-sm mt-2 font-light">
             Calculate your Body Mass Index and receive actionable guidance for your training goals.
-          </motion.p>
+          </p>
         </div>
 
         {/* Interactive Calculator Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 55 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="p-8 sm:p-10 rounded-2xl bg-[var(--theme-surface)] border border-[var(--theme-border)] shadow-xl backdrop-blur-md"
-        >
+        <div className="p-6 sm:p-10 rounded-2xl bg-[var(--theme-surface)] border border-[var(--theme-border)] shadow-xl backdrop-blur-md">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: 0.25 }}
-              className="flex flex-col gap-2 text-left"
-            >
+            <div className="flex flex-col gap-2 text-left">
               <label className="text-xs text-[var(--theme-text-muted)] font-mono font-bold uppercase tracking-wider">Weight (kg)</label>
               <input
                 type="number"
@@ -82,15 +51,9 @@ export default function FitnessCalculator() {
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
               />
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: 0.35 }}
-              className="flex flex-col gap-2 text-left"
-            >
+            <div className="flex flex-col gap-2 text-left">
               <label className="text-xs text-[var(--theme-text-muted)] font-mono font-bold uppercase tracking-wider">Height (cm)</label>
               <input
                 type="number"
@@ -99,25 +62,18 @@ export default function FitnessCalculator() {
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
               />
-            </motion.div>
+            </div>
           </div>
 
-          <motion.button
+          <button
             onClick={calculateBMI}
-            className="font-mono w-full bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] px-6 py-4 font-black rounded-xl text-sm tracking-widest uppercase hover:brightness-110 transition-all cursor-pointer shadow-lg"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            className="font-mono w-full bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] px-6 py-4 font-black rounded-xl text-sm tracking-widest uppercase hover:brightness-110 active:scale-[0.99] transition-all cursor-pointer shadow-lg"
           >
             CALCULATE YOUR BMI
-          </motion.button>
+          </button>
 
           {bmi && category && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="mt-6 p-6 rounded-xl bg-[var(--theme-bg)] border border-[var(--theme-border)] flex flex-col sm:flex-row items-center justify-between gap-6"
-            >
+            <div className="mt-6 p-6 rounded-xl bg-[var(--theme-bg)] border border-[var(--theme-border)] flex flex-col sm:flex-row items-center justify-between gap-6 transition-all">
               <div>
                 <div className="text-xs font-mono text-[var(--theme-text-muted)] mb-1">YOUR BMI</div>
                 <div className="text-5xl font-black text-[var(--theme-accent)] font-mono tracking-tight">{bmi.toFixed(1)}</div>
@@ -129,9 +85,9 @@ export default function FitnessCalculator() {
                 <div className="text-xs font-mono text-[var(--theme-text-muted)] uppercase tracking-wider mb-1">TRAINING TIP</div>
                 <p className="text-[var(--theme-text-main)] text-sm leading-relaxed">{category.tip}</p>
               </div>
-            </motion.div>
+            </div>
           )}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

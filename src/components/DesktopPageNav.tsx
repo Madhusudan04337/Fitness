@@ -9,37 +9,40 @@ export interface PageItem {
 }
 
 const pages: PageItem[] = [
-  { id: 'hero', number: '01', label: 'Welcome' },
-  { id: 'about', number: '02', label: 'About Us' },
-  { id: 'services', number: '03', label: 'Our Services' },
-  { id: 'showcase', number: '04', label: 'Community' },
-  { id: 'pricing', number: '05', label: 'Pricing Plans' },
-  { id: 'testimonials', number: '06', label: 'Member Stories' },
-  { id: 'coaches', number: '07', label: 'Coaches' },
-  { id: 'calculator', number: '08', label: 'BMI Calculator' },
-  { id: 'faq', number: '09', label: 'FAQ' },
-  { id: 'contact', number: '10', label: 'Contact & Hubs' },
+  { id: 'about', number: '01', label: 'About' },
+  { id: 'services', number: '02', label: 'Services' },
+  { id: 'pricing', number: '03', label: 'Pricing' },
+  { id: 'testimonials', number: '04', label: 'Testimonials' },
+  { id: 'faq', number: '05', label: 'FAQ' },
 ];
 
 export default function DesktopPageNav() {
-  const [activeId, setActiveId] = useState<string>('hero');
+  const [activeId, setActiveId] = useState<string>('about');
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight * 0.35;
-      for (let i = pages.length - 1; i >= 0; i--) {
-        const el = document.getElementById(pages[i].id);
-        if (el && el.offsetTop <= scrollPosition) {
-          setActiveId(pages[i].id);
-          break;
-        }
-      }
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -40% 0px',
+      threshold: 0,
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleIntersect: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveId(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+
+    pages.forEach((page) => {
+      const el = document.getElementById(page.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const currentIndex = pages.findIndex((p) => p.id === activeId);
@@ -49,7 +52,7 @@ export default function DesktopPageNav() {
     if (nextSection) {
       document.getElementById(nextSection.id)?.scrollIntoView({ behavior: 'smooth' });
     } else {
-      document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -58,10 +61,11 @@ export default function DesktopPageNav() {
   };
 
   return (
-    <aside
-      aria-label="Desktop Section Navigation"
-      className="hidden xl:flex fixed right-6 top-1/2 -translate-y-1/2 z-40 flex-col items-center gap-3 select-none"
-    >
+    <>
+      <aside
+        aria-label="Desktop Section Navigation"
+        className="hidden xl:flex fixed right-6 top-1/2 -translate-y-1/2 z-40 flex-col items-center gap-3 select-none pointer-events-auto"
+      >
       {/* Background Architectural Bar */}
       <div className="flex flex-col items-center gap-2 p-2 rounded-full bg-[var(--theme-surface)] border border-[var(--theme-border)] backdrop-blur-md shadow-lg">
         {pages.map((page) => {
@@ -95,16 +99,17 @@ export default function DesktopPageNav() {
                 aria-label={`Jump to section ${page.number}: ${page.label}`}
                 className="group relative flex items-center justify-center w-7 h-7 rounded-full transition-all cursor-pointer focus:outline-none"
               >
-                {isActive ? (
-                  <motion.div
-                    layoutId="activeDot"
-                    className="w-3.5 h-3.5 rounded-full bg-[var(--theme-accent)] flex items-center justify-center"
-                  >
+                <span
+                  className={`rounded-full transition-all duration-200 flex items-center justify-center ${
+                    isActive
+                      ? 'w-3.5 h-3.5 bg-[var(--theme-accent)] shadow-xs scale-100'
+                      : 'w-1.5 h-1.5 bg-[var(--theme-text-muted)] opacity-30 group-hover:opacity-90 group-hover:scale-125'
+                  }`}
+                >
+                  {isActive && (
                     <span className="w-1.5 h-1.5 rounded-full bg-[var(--theme-accent-contrast)]" />
-                  </motion.div>
-                ) : (
-                  <div className="w-1.5 h-1.5 rounded-full bg-[var(--theme-text-muted)] opacity-30 group-hover:opacity-90 group-hover:scale-125 transition-all" />
-                )}
+                  )}
+                </span>
               </button>
             </div>
           );
@@ -135,5 +140,44 @@ export default function DesktopPageNav() {
         {pages[currentIndex]?.number || '01'} / {pages[pages.length - 1].number}
       </div>
     </aside>
+
+    {/* Mobile Floating Landmark Controller (Visible on screens < xl) */}
+    <aside
+      aria-label="Mobile Section Quick Navigator"
+      className="flex xl:hidden fixed bottom-4 right-4 z-40 select-none pointer-events-auto"
+    >
+      <div className="flex items-center gap-1.5 p-1.5 pl-3 rounded-full bg-[var(--theme-surface)]/90 border border-[var(--theme-border)] backdrop-blur-xl shadow-lg">
+        {/* Active Section Label */}
+        <button
+          onClick={() => scrollToSection(activeId)}
+          className="flex items-center gap-2 text-left cursor-pointer focus:outline-none"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-[var(--theme-accent)]" />
+          <span className="font-mono text-[10px] font-bold text-[var(--theme-accent)]">
+            {pages[currentIndex]?.number || '01'}
+          </span>
+          <span className="font-mono text-[10px] font-bold text-[var(--theme-text-main)] tracking-wider uppercase pr-1">
+            {pages[currentIndex]?.label || 'About'}
+          </span>
+        </button>
+
+        {/* Divider */}
+        <div className="w-px h-3.5 bg-[var(--theme-border)]" />
+
+        {/* Jump / Back to top Button */}
+        <button
+          onClick={scrollToNext}
+          aria-label={nextSection ? `Jump to ${nextSection.label}` : 'Back to Top'}
+          className="w-7 h-7 rounded-full bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] flex items-center justify-center cursor-pointer active:scale-95 transition-transform shadow-xs"
+        >
+          {nextSection ? (
+            <ChevronDown className="w-3.5 h-3.5 stroke-[2.5]" />
+          ) : (
+            <ArrowUp className="w-3.5 h-3.5 stroke-[2.5]" />
+          )}
+        </button>
+      </div>
+    </aside>
+    </>
   );
 }

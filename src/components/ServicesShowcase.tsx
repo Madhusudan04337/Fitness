@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 
 const features = [
   { id: '01', title: 'COMMUNITY EVENTS', description: 'Join weekly group sessions and connect with fellow members in our vibrant community.' },
@@ -13,44 +12,20 @@ export default function ServicesShowcase() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Left Side - Hero Content */}
         <div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[var(--theme-accent)] text-xs font-mono tracking-[0.25em] mb-3 uppercase font-semibold"
-          >
+          <div className="text-[var(--theme-accent)] text-xs font-mono tracking-[0.25em] mb-3 uppercase font-semibold">
             COMMUNITY & LIFESTYLE
-          </motion.div>
+          </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="font-heading text-4xl sm:text-5xl lg:text-6xl font-black mb-4 tracking-tight leading-[1.05]"
-          >
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-black mb-4 tracking-tight leading-[1.05]">
             A WHOLE <br />
             <span className="text-[var(--theme-accent)]">LIFE</span> APPROACH.
-          </motion.h2>
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 35 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.65, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[var(--theme-text-muted)] mb-8 max-w-md text-base md:text-lg leading-relaxed font-light"
-          >
+          <p className="text-[var(--theme-text-muted)] mb-8 max-w-md text-base md:text-lg leading-relaxed font-light">
             Great training is just the beginning. Our recovery facilities, expert guidance, and supportive community keep you inspired every day.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.5, delay: 0.36, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-wrap gap-4"
-          >
+          <div className="flex flex-wrap gap-4">
             <a
               href="#coaches"
               className="font-heading px-7 py-3.5 bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] font-black rounded-lg text-xs tracking-wider uppercase hover:brightness-110 transition-all shadow-md cursor-pointer"
@@ -63,24 +38,15 @@ export default function ServicesShowcase() {
             >
               MEMBER STORIES
             </a>
-          </motion.div>
+          </div>
         </div>
 
-        {/* Right Side - List Cards animated one by one */}
+        {/* Right Side - List Cards */}
         <div className="flex flex-col gap-5">
-          {features.map((feature, index) => (
-            <motion.div
+          {features.map((feature) => (
+            <div
               key={feature.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.15,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="group p-6 rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] transition-all cursor-default shadow-sm"
-              whileHover={{ x: 8 }}
+              className="group p-6 rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] hover:translate-x-1.5 transition-all duration-200 cursor-default shadow-sm"
             >
               <div className="flex justify-between items-start mb-2">
                 <h3 className="font-heading text-2xl font-black text-[var(--theme-text-main)] group-hover:text-[var(--theme-accent)] transition-colors tracking-tight">
@@ -91,7 +57,7 @@ export default function ServicesShowcase() {
                 </span>
               </div>
               <p className="text-[var(--theme-text-muted)] text-sm leading-relaxed">{feature.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

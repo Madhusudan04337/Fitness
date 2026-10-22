@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 
 const coaches = [
   {
@@ -31,51 +30,24 @@ export default function Coaches() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="text-[var(--theme-accent)] text-xs font-mono tracking-[0.25em] mb-2 uppercase font-semibold"
-            >
+            <div className="text-[var(--theme-accent)] text-xs font-mono tracking-[0.25em] mb-2 uppercase font-semibold">
               OUR COACHES
-            </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-              className="font-heading text-4xl sm:text-5xl font-black tracking-tight leading-tight"
-            >
+            </div>
+            <h2 className="font-heading text-4xl sm:text-5xl font-black tracking-tight leading-tight">
               GUIDED BY EXPERTS,<br />
               <span className="text-[var(--theme-accent)]">DRIVEN BY YOU.</span>
-            </motion.h2>
+            </h2>
           </div>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.65, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[var(--theme-text-muted)] text-sm max-w-sm mt-4 md:mt-0 font-light"
-          >
+          <p className="text-[var(--theme-text-muted)] text-sm max-w-sm mt-4 md:mt-0 font-light">
             Certified personal trainers with over a decade of real-world coaching experience.
-          </motion.p>
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {coaches.map((coach, idx) => (
-            <motion.div
+          {coaches.map((coach) => (
+            <div
               key={coach.name}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.15 }}
-              transition={{
-                duration: 0.65,
-                delay: idx * 0.16,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              whileHover={{ y: -8 }}
-              className="group rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] overflow-hidden transition-all duration-300 shadow-sm"
+              className="group rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] hover:-translate-y-1.5 overflow-hidden transition-all duration-200 shadow-sm cursor-default"
             >
               <div className="relative w-full h-72 overflow-hidden bg-[var(--theme-surface-solid)]">
                 <img
@@ -96,7 +68,7 @@ export default function Coaches() {
                 <h3 className="font-heading text-2xl font-black text-[var(--theme-text-main)] mb-2 tracking-tight">{coach.name}</h3>
                 <p className="text-[var(--theme-text-muted)] text-sm leading-relaxed">{coach.expertise}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

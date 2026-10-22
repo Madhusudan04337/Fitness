@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { ArrowUpRight, Play } from 'lucide-react';
 
 const services = [
@@ -41,45 +40,21 @@ export default function Services() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         {/* Left - Sticky Hero Context */}
         <div className="lg:col-span-5 lg:sticky lg:top-28">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[var(--theme-accent)] text-xs font-mono tracking-[0.25em] mb-3 uppercase font-semibold"
-          >
+          <div className="text-[var(--theme-accent)] text-xs font-mono tracking-[0.25em] mb-3 uppercase font-semibold">
             WHAT WE OFFER
-          </motion.div>
+          </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="font-heading text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-4 leading-[1.05]"
-          >
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-4 leading-[1.05]">
             <span className="text-[var(--theme-accent)]">NOT JUST WORKOUTS.</span>
             <br />
             A WHOLE APPROACH.
-          </motion.h2>
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 35 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.65, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[var(--theme-text-muted)] text-base md:text-lg mb-8 leading-relaxed font-light"
-          >
+          <p className="text-[var(--theme-text-muted)] text-base md:text-lg mb-8 leading-relaxed font-light">
             From personal training to nutrition and recovery — we cover everything you need to look, move, and feel your absolute best.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.5, delay: 0.36, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-wrap items-center gap-4 mb-8"
-          >
+          <div className="flex flex-wrap items-center gap-4 mb-8">
             <a
               href="#pricing"
               className="font-heading inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] font-black text-xs tracking-wider uppercase hover:brightness-110 transition-all shadow-md cursor-pointer"
@@ -96,37 +71,20 @@ export default function Services() {
               TOUR FACILITY
               <Play className="w-3 h-3 fill-current text-[var(--theme-accent)]" />
             </button>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.5, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="p-4 rounded-xl border border-[var(--theme-border)] bg-[var(--theme-surface)] text-[var(--theme-text-muted)] text-xs flex items-center gap-2 shadow-xs"
-          >
+          <div className="p-4 rounded-xl border border-[var(--theme-border)] bg-[var(--theme-surface)] text-[var(--theme-text-muted)] text-xs flex items-center gap-2 shadow-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--theme-accent)]" />
             <span>Comprehensive coaching, nutrition, and recovery under one roof.</span>
-          </motion.div>
+          </div>
         </div>
 
-        {/* Right - Service Rows animated one-by-one */}
+        {/* Right - Service Rows */}
         <div className="lg:col-span-7 flex flex-col gap-5">
-          {services.map((service, index) => (
-            <motion.div
+          {services.map((service) => (
+            <div
               key={service.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.15 }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.12,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              whileHover={{
-                x: 8,
-              }}
-              className="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] transition-all shadow-sm gap-6 cursor-default"
+              className="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] hover:translate-x-1.5 transition-all duration-200 shadow-sm gap-6 cursor-default"
             >
               <div className="flex items-center gap-5 flex-1">
                 <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-[var(--theme-border)]">
@@ -146,7 +104,7 @@ export default function Services() {
               <div className="font-mono text-2xl font-black text-[var(--theme-text-muted)] opacity-40 group-hover:opacity-100 group-hover:text-[var(--theme-accent)] transition-all self-end sm:self-center">
                 {service.id}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

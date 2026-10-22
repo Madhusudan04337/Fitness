@@ -131,49 +131,25 @@ export default function Pricing() {
       <div className="relative max-w-7xl mx-auto flex flex-col items-center">
         {/* Section Header */}
         <div className="text-center max-w-3xl mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[var(--theme-surface)] border border-[var(--theme-border)] text-[11px] font-mono tracking-[0.25em] text-[var(--theme-accent)] uppercase mb-4 shadow-xs"
-          >
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[var(--theme-surface)] border border-[var(--theme-border)] text-[11px] font-mono tracking-[0.25em] text-[var(--theme-accent)] uppercase mb-4 shadow-xs">
             <Flame className="w-3.5 h-3.5" />
             <span>MEMBERSHIP PLANS</span>
-          </motion.div>
+          </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[var(--theme-text-main)] leading-tight"
-          >
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[var(--theme-text-main)] leading-tight">
             SIMPLE, TRANSPARENT{' '}
             <span className="font-editorial italic font-normal text-[var(--theme-accent)]">
               Pricing
             </span>
-          </motion.h2>
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 35 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.65, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-4 text-[var(--theme-text-muted)] text-sm sm:text-base leading-relaxed"
-          >
+          <p className="mt-4 text-[var(--theme-text-muted)] text-sm sm:text-base leading-relaxed">
             No hidden fees, no long contracts, and full access to modern equipment and recovery amenities.
             Every plan includes our 14-day zero-risk trial.
-          </motion.p>
+          </p>
 
           {/* Billing Switcher */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.5, delay: 0.36, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-8 inline-flex items-center p-1.5 rounded-full bg-[var(--theme-surface)] border border-[var(--theme-border)] backdrop-blur-md shadow-xs"
-          >
+          <div className="mt-8 inline-flex items-center p-1.5 rounded-full bg-[var(--theme-surface)] border border-[var(--theme-border)] backdrop-blur-md shadow-xs">
             <button
               onClick={() => setBillingCycle('monthly')}
               className={`relative px-5 py-2 rounded-full text-xs font-mono font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer ${
@@ -204,29 +180,20 @@ export default function Pricing() {
                 SAVE 20%
               </span>
             </button>
-          </motion.div>
+          </div>
         </div>
 
-        {/* Pricing Cards Grid animated one-by-one from bottom */}
+        {/* Pricing Cards Grid */}
         <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-stretch">
-          {TIERS.map((tier, idx) => {
+          {TIERS.map((tier) => {
             const price =
               billingCycle === 'annual' ? tier.annualPrice : tier.monthlyPrice;
             const savings = (tier.monthlyPrice - tier.annualPrice) * 12;
 
             return (
-              <motion.div
+              <div
                 key={tier.id}
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.15 }}
-                transition={{
-                  duration: 0.65,
-                  delay: idx * 0.16,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                whileHover={{ y: -6 }}
-                className={`relative flex flex-col justify-between rounded-2xl p-7 lg:p-8 transition-all duration-300 ${
+                className={`relative flex flex-col justify-between rounded-2xl p-7 lg:p-8 hover:-translate-y-1.5 transition-all duration-200 ${
                   tier.highlight
                     ? 'bg-[var(--theme-surface)] border-2 border-[var(--theme-accent)] shadow-md'
                     : 'bg-[var(--theme-surface)] border border-[var(--theme-border)] hover:border-[var(--theme-accent)] shadow-xs'
@@ -341,12 +308,12 @@ export default function Pricing() {
                     <span>14-day money-back guarantee</span>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
 
-        {/* Trust Badges & Guarantee Row with one-by-one animation */}
+        {/* Trust Badges & Guarantee Row */}
         <div className="mt-14 w-full grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
@@ -364,17 +331,9 @@ export default function Pricing() {
               title: '14-Day Guarantee',
               desc: 'Try our club for 14 days. If it is not right for you, receive a full 100% refund.',
             },
-          ].map((item, gIdx) => (
-            <motion.div
+          ].map((item) => (
+            <div
               key={item.title}
-              initial={{ opacity: 0, y: 45 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{
-                duration: 0.55,
-                delay: gIdx * 0.12,
-                ease: [0.22, 1, 0.36, 1],
-              }}
               className="flex items-center gap-4 p-6 rounded-2xl bg-[var(--theme-surface)] border border-[var(--theme-border)] shadow-xs"
             >
               <div className="w-10 h-10 rounded-xl bg-[var(--theme-accent-badge)] border border-[var(--theme-accent)]/20 flex items-center justify-center text-[var(--theme-accent)] shrink-0">
@@ -388,7 +347,7 @@ export default function Pricing() {
                   {item.desc}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -402,7 +361,7 @@ export default function Pricing() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
               transition={{ duration: 0.2 }}
-              className="relative w-full max-w-lg rounded-2xl bg-[var(--theme-surface-solid)] border border-[var(--theme-border)] shadow-2xl p-6 sm:p-8 text-[var(--theme-text-main)] overflow-hidden"
+              className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto rounded-2xl bg-[var(--theme-surface-solid)] border border-[var(--theme-border)] shadow-2xl p-6 sm:p-8 text-[var(--theme-text-main)]"
             >
               {/* Top Close Button */}
               <button

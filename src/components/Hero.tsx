@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowUpRight, Compass, Shield, Flame, Activity } from 'lucide-react';
+import { ArrowUpRight, Compass } from 'lucide-react';
 import ScrollArrow from './ScrollArrow';
 
 export default function Hero() {
@@ -9,81 +9,56 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex flex-col justify-between min-h-screen pt-28 pb-10 px-6 sm:px-10 lg:px-16 text-[var(--theme-text-main)] bg-[var(--theme-bg)] overflow-hidden transition-colors duration-300"
+      className="relative flex flex-col justify-between min-h-screen pt-24 sm:pt-28 pb-8 sm:pb-10 px-4 sm:px-10 lg:px-16 text-[var(--theme-text-main)] bg-[var(--theme-bg)] overflow-hidden transition-colors duration-300"
     >
-      {/* Background Architectural Grid Lines - subtle, crisp, no lightning */}
+      {/* Background Architectural Grid Lines */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(var(--theme-text-main)_1px,transparent_1px)] [background-size:24px_24px]" />
 
       {/* Top Technical Dispatch Bar */}
       <div className="relative z-10 w-full max-w-7xl mx-auto pt-2">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-[var(--theme-border)] text-[11px] font-mono tracking-widest text-[var(--theme-text-muted)] uppercase"
-        >
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 pb-3 sm:pb-4 border-b border-[var(--theme-border)] text-[10px] sm:text-[11px] font-mono tracking-widest text-[var(--theme-text-muted)] uppercase">
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-xs bg-[var(--theme-accent)]" />
             <span className="text-[var(--theme-text-main)] font-semibold">INDIRANAGAR PERFORMANCE HUB</span>
             <span className="hidden sm:inline opacity-50">• 12.9716° N, 77.5946° E</span>
           </div>
 
-          <div className="flex items-center gap-4 text-[10px]">
+          <div className="flex items-center gap-3 sm:gap-4 text-[10px]">
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
               <span>FLOOR OPEN (06:00 – 23:00)</span>
             </span>
             <span className="hidden md:inline opacity-50">|</span>
-            <span className="hidden md:inline">CAPPED AT 250 ACTIVE MEMBERS</span>
+            <span className="hidden sm:inline">CAPPED AT 250 ACTIVE MEMBERS</span>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Main Hero Body: Asymmetric Editorial Layout */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto my-auto py-8 lg:py-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto my-auto py-6 sm:py-8 lg:py-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
         {/* Left Column: Bold Typography & Purpose */}
         <div className="lg:col-span-7 flex flex-col text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-2 mb-4 text-xs font-mono font-bold tracking-[0.25em] text-[var(--theme-accent)] uppercase"
-          >
+          <div className="inline-flex items-center gap-2 mb-3 sm:mb-4 text-xs font-mono font-bold tracking-[0.25em] text-[var(--theme-accent)] uppercase">
             <span>[ SYSTEM PROTOCOL 01 ]</span>
             <span className="opacity-40">// ATHLETIC ATELIER</span>
-          </motion.div>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-heading text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[0.94] mb-6 uppercase text-[var(--theme-text-main)]"
-          >
+          <h1 className="font-heading text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[0.96] mb-5 sm:mb-6 uppercase text-[var(--theme-text-main)]">
             DISCIPLINE <br />
             <span className="text-[var(--theme-accent)]">IN FORM.</span> <br />
             RECOVERY <br />
             IN SCIENCE.
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="text-base sm:text-lg text-[var(--theme-text-muted)] max-w-xl mb-8 leading-relaxed font-light"
-          >
+          <p className="text-sm sm:text-base lg:text-lg text-[var(--theme-text-muted)] max-w-xl mb-6 sm:mb-8 leading-relaxed font-light">
             A high-standard training collective built for purposeful lifting, metabolic conditioning, and cold-contrast recovery. Zero crowded floor, zero commercial distraction.
-          </motion.p>
+          </p>
 
-          {/* Action CTAs: Crisp, solid, zero neon glow */}
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-wrap items-center gap-4 mb-10"
-          >
+          {/* Action CTAs: Full-width on mobile, auto on desktop */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-10 w-full">
             <motion.a
               href="#pricing"
-              className="px-7 py-3.5 bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] font-mono font-bold rounded-lg text-xs tracking-widest uppercase flex items-center gap-2 hover:brightness-105 transition-all shadow-xs cursor-pointer"
+              className="w-full sm:w-auto px-7 py-3.5 bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] font-mono font-bold rounded-lg text-xs tracking-widest uppercase flex items-center justify-center gap-2 hover:brightness-105 transition-all shadow-xs cursor-pointer"
               {...hoverEffect}
             >
               EXPLORE MEMBERSHIPS
@@ -92,44 +67,34 @@ export default function Hero() {
 
             <motion.a
               href="#services"
-              className="px-7 py-3.5 border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-text-muted)] text-[var(--theme-text-main)] font-mono font-bold rounded-lg text-xs tracking-widest uppercase flex items-center gap-2 transition-all cursor-pointer"
+              className="w-full sm:w-auto px-7 py-3.5 border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-text-muted)] text-[var(--theme-text-main)] font-mono font-bold rounded-lg text-xs tracking-widest uppercase flex items-center justify-center gap-2 transition-all cursor-pointer"
               {...hoverEffect}
             >
               <Compass className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
               VIEW SERVICES
             </motion.a>
-          </motion.div>
+          </div>
 
           {/* Architectural Specifications Strip */}
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            className="grid grid-cols-3 gap-4 pt-6 border-t border-[var(--theme-border)] max-w-xl"
-          >
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-5 sm:pt-6 border-t border-[var(--theme-border)] max-w-xl">
             <div>
-              <div className="font-mono text-xs text-[var(--theme-accent)] font-bold">ELEIKO RIGS</div>
-              <div className="text-[11px] text-[var(--theme-text-muted)] mt-0.5">Olympic calibrated bars</div>
+              <div className="font-mono text-[11px] sm:text-xs text-[var(--theme-accent)] font-bold">ELEIKO RIGS</div>
+              <div className="text-[10px] sm:text-[11px] text-[var(--theme-text-muted)] mt-0.5">Olympic calibrated bars</div>
             </div>
             <div>
-              <div className="font-mono text-xs text-[var(--theme-accent)] font-bold">4°C PLUNGE</div>
-              <div className="text-[11px] text-[var(--theme-text-muted)] mt-0.5">Active cold recovery</div>
+              <div className="font-mono text-[11px] sm:text-xs text-[var(--theme-accent)] font-bold">4°C PLUNGE</div>
+              <div className="text-[10px] sm:text-[11px] text-[var(--theme-text-muted)] mt-0.5">Active cold recovery</div>
             </div>
             <div>
-              <div className="font-mono text-xs text-[var(--theme-accent)] font-bold">1-ON-1 COACH</div>
-              <div className="text-[11px] text-[var(--theme-text-muted)] mt-0.5">Custom programming</div>
+              <div className="font-mono text-[11px] sm:text-xs text-[var(--theme-accent)] font-bold">1-ON-1 COACH</div>
+              <div className="text-[10px] sm:text-[11px] text-[var(--theme-text-muted)] mt-0.5">Custom programming</div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Right Column: Architectural Framed Showcase Card */}
         <div className="lg:col-span-5 relative">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="relative rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] p-3 overflow-hidden shadow-xl"
-          >
+          <div className="relative rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] p-3 overflow-hidden shadow-xl">
             {/* Technical Crosshairs */}
             <span className="absolute top-2 left-2 text-[10px] font-mono text-[var(--theme-text-muted)] opacity-40">+</span>
             <span className="absolute top-2 right-2 text-[10px] font-mono text-[var(--theme-text-muted)] opacity-40">+</span>
@@ -170,24 +135,19 @@ export default function Hero() {
               <span>FACILITY ID: HYPER-BLR-01</span>
               <span className="text-[var(--theme-text-main)] font-bold">LIMITED TO 250 MEMBERS</span>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
       {/* Down Arrow / Section Navigation */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10 w-full flex justify-center pt-2"
-      >
+      <div className="relative z-10 w-full flex justify-center pt-2">
         <ScrollArrow
           variant="hero"
           targetId="about"
           label="EXPLORE OUR SPACE"
-          pageNumber="01 / 10"
+          pageNumber="01 / 05"
         />
-      </motion.div>
+      </div>
     </section>
   );
 }
