@@ -1,137 +1,185 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Play, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Compass, Shield, Flame, Activity } from 'lucide-react';
 import ScrollArrow from './ScrollArrow';
 
 export default function Hero() {
-  const hoverEffect = { hover: { scale: 1.05 }, tap: { scale: 0.95 } };
+  const hoverEffect = { hover: { scale: 1.02 }, tap: { scale: 0.98 } };
 
   return (
     <section
       id="hero"
-      className="relative flex flex-col items-center justify-between min-h-screen pt-28 pb-10 px-6 text-center text-[var(--theme-text-main)] bg-[var(--theme-bg)] overflow-hidden transition-colors duration-300"
+      className="relative flex flex-col justify-between min-h-screen pt-28 pb-10 px-6 sm:px-10 lg:px-16 text-[var(--theme-text-main)] bg-[var(--theme-bg)] overflow-hidden transition-colors duration-300"
     >
-      {/* Background with subtle athletic imagery and dynamic theme radial glow */}
-      <img
-        src="/assets/aistudio/young-beautiful-woman-doing-exercise-with-bar-gym-athletic-girl-doing-workout-fitness-center-dark-background-gym-dressed-sport-clothes_7870b930.jpg"
-        alt="Hero background"
-        className="absolute inset-0 w-full h-full object-cover opacity-20 filter grayscale contrast-125 pointer-events-none mix-blend-luminosity"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-[var(--theme-bg)]/90 via-[var(--theme-bg)]/60 to-[var(--theme-bg)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--theme-accent-glow)_0,transparent_65%)] pointer-events-none" />
+      {/* Background Architectural Grid Lines - subtle, crisp, no lightning */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(var(--theme-text-main)_1px,transparent_1px)] [background-size:24px_24px]" />
 
-      {/* 1. Top Tagline */}
-      <div className="relative z-10 pt-4">
+      {/* Top Technical Dispatch Bar */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto pt-2">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[var(--theme-surface)] border border-[var(--theme-border)] backdrop-blur-md shadow-xs"
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-[var(--theme-border)] text-[11px] font-mono tracking-widest text-[var(--theme-text-muted)] uppercase"
         >
-          <span className="w-2 h-2 rounded-full bg-[var(--theme-accent)] animate-pulse" />
-          <span className="text-[11px] font-mono tracking-[0.2em] text-[var(--theme-text-muted)] uppercase">
-            PREMIUM FITNESS & RECOVERY • INDIRANAGAR
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-xs bg-[var(--theme-accent)]" />
+            <span className="text-[var(--theme-text-main)] font-semibold">INDIRANAGAR PERFORMANCE HUB</span>
+            <span className="hidden sm:inline opacity-50">• 12.9716° N, 77.5946° E</span>
+          </div>
+
+          <div className="flex items-center gap-4 text-[10px]">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              <span>FLOOR OPEN (06:00 – 23:00)</span>
+            </span>
+            <span className="hidden md:inline opacity-50">|</span>
+            <span className="hidden md:inline">CAPPED AT 250 ACTIVE MEMBERS</span>
+          </div>
         </motion.div>
       </div>
 
-      {/* 2. Main Center Content */}
-      <div className="relative z-10 flex flex-col items-center max-w-5xl mx-auto my-auto py-6">
-        <motion.h1
-          initial={{ opacity: 0, y: 55, filter: 'blur(8px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 0.85, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.92] mb-6 select-none"
-        >
-          TRAIN LIKE
-          <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--theme-text-main)] via-[var(--theme-text-main)] to-[var(--theme-accent)]">
-            YOU
-          </span>{' '}
-          <span className="text-[var(--theme-accent)]">PERFORM</span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="text-lg md:text-2xl text-[var(--theme-text-muted)] max-w-3xl mb-8 leading-relaxed font-light"
-        >
-          World-class personal training, Olympic strength equipment, and science-backed recovery — built to help you reach your peak performance.
-        </motion.p>
-
-        {/* Action Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mb-10"
-        >
-          <motion.a
-            href="#pricing"
-            className="group px-9 py-4 bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] font-bold rounded-lg text-sm tracking-wider uppercase flex items-center gap-2 hover:brightness-110 transition-all shadow-[0_0_30px_var(--theme-accent-glow)] cursor-pointer"
-            {...hoverEffect}
+      {/* Main Hero Body: Asymmetric Editorial Layout */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto my-auto py-8 lg:py-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        {/* Left Column: Bold Typography & Purpose */}
+        <div className="lg:col-span-7 flex flex-col text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="inline-flex items-center gap-2 mb-4 text-xs font-mono font-bold tracking-[0.25em] text-[var(--theme-accent)] uppercase"
           >
-            JOIN TODAY
-            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </motion.a>
-          <motion.a
-            href="#services"
-            className="px-9 py-4 border border-[var(--theme-border)] bg-[var(--theme-surface)] backdrop-blur-sm text-[var(--theme-text-main)] font-bold rounded-lg text-sm tracking-wider uppercase flex items-center gap-2 hover:border-[var(--theme-accent)] transition-all cursor-pointer"
-            {...hoverEffect}
-          >
-            <Play className="w-3.5 h-3.5 fill-current text-[var(--theme-accent)]" />
-            VIEW SERVICES
-          </motion.a>
-        </motion.div>
+            <span>[ SYSTEM PROTOCOL 01 ]</span>
+            <span className="opacity-40">// ATHLETIC ATELIER</span>
+          </motion.div>
 
-        {/* Live Athletic Highlights Strip on Desktop */}
-        <div className="hidden md:grid grid-cols-3 gap-6 pt-6 border-t border-[var(--theme-border)] w-full max-w-3xl text-left">
-          {[
-            {
-              title: '01 / ASSESSMENT',
-              desc: 'Personalized movement assessment and goal setting for every member',
-              highlight: false,
-            },
-            {
-              title: '02 / STRENGTH',
-              desc: 'Customized training programs with competition-grade equipment',
-              highlight: true,
-            },
-            {
-              title: '03 / RECOVERY',
-              desc: 'Cold plunge tubs, infrared sauna, and guided mobility recovery',
-              highlight: false,
-            },
-          ].map((col, idx) => (
-            <motion.div
-              key={col.title}
-              initial={{ opacity: 0, y: 35 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                delay: 0.75 + idx * 0.14,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className={`flex flex-col ${idx === 1 ? 'border-x border-[var(--theme-border)] px-4' : idx === 2 ? 'pl-2' : ''}`}
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="font-heading text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[0.94] mb-6 uppercase text-[var(--theme-text-main)]"
+          >
+            DISCIPLINE <br />
+            <span className="text-[var(--theme-accent)]">IN FORM.</span> <br />
+            RECOVERY <br />
+            IN SCIENCE.
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="text-base sm:text-lg text-[var(--theme-text-muted)] max-w-xl mb-8 leading-relaxed font-light"
+          >
+            A high-standard training collective built for purposeful lifting, metabolic conditioning, and cold-contrast recovery. Zero crowded floor, zero commercial distraction.
+          </motion.p>
+
+          {/* Action CTAs: Crisp, solid, zero neon glow */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-wrap items-center gap-4 mb-10"
+          >
+            <motion.a
+              href="#pricing"
+              className="px-7 py-3.5 bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] font-mono font-bold rounded-lg text-xs tracking-widest uppercase flex items-center gap-2 hover:brightness-105 transition-all shadow-xs cursor-pointer"
+              {...hoverEffect}
             >
-              <span className={`text-xl font-bold font-mono ${col.highlight ? 'text-[var(--theme-accent)]' : 'text-[var(--theme-text-main)]'}`}>
-                {col.title}
-              </span>
-              <span className="text-xs text-[var(--theme-text-muted)] mt-1 leading-relaxed">
-                {col.desc}
-              </span>
-            </motion.div>
-          ))}
+              EXPLORE MEMBERSHIPS
+              <ArrowUpRight className="w-4 h-4" />
+            </motion.a>
+
+            <motion.a
+              href="#services"
+              className="px-7 py-3.5 border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-text-muted)] text-[var(--theme-text-main)] font-mono font-bold rounded-lg text-xs tracking-widest uppercase flex items-center gap-2 transition-all cursor-pointer"
+              {...hoverEffect}
+            >
+              <Compass className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
+              VIEW SERVICES
+            </motion.a>
+          </motion.div>
+
+          {/* Architectural Specifications Strip */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="grid grid-cols-3 gap-4 pt-6 border-t border-[var(--theme-border)] max-w-xl"
+          >
+            <div>
+              <div className="font-mono text-xs text-[var(--theme-accent)] font-bold">ELEIKO RIGS</div>
+              <div className="text-[11px] text-[var(--theme-text-muted)] mt-0.5">Olympic calibrated bars</div>
+            </div>
+            <div>
+              <div className="font-mono text-xs text-[var(--theme-accent)] font-bold">4°C PLUNGE</div>
+              <div className="text-[11px] text-[var(--theme-text-muted)] mt-0.5">Active cold recovery</div>
+            </div>
+            <div>
+              <div className="font-mono text-xs text-[var(--theme-accent)] font-bold">1-ON-1 COACH</div>
+              <div className="text-[11px] text-[var(--theme-text-muted)] mt-0.5">Custom programming</div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Right Column: Architectural Framed Showcase Card */}
+        <div className="lg:col-span-5 relative">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="relative rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] p-3 overflow-hidden shadow-xl"
+          >
+            {/* Technical Crosshairs */}
+            <span className="absolute top-2 left-2 text-[10px] font-mono text-[var(--theme-text-muted)] opacity-40">+</span>
+            <span className="absolute top-2 right-2 text-[10px] font-mono text-[var(--theme-text-muted)] opacity-40">+</span>
+            <span className="absolute bottom-2 left-2 text-[10px] font-mono text-[var(--theme-text-muted)] opacity-40">+</span>
+            <span className="absolute bottom-2 right-2 text-[10px] font-mono text-[var(--theme-text-muted)] opacity-40">+</span>
+
+            <div className="relative rounded-xl overflow-hidden aspect-[4/5] bg-[var(--theme-surface-solid)]">
+              <img
+                src="/assets/aistudio/young-beautiful-woman-doing-exercise-with-bar-gym-athletic-girl-doing-workout-fitness-center-dark-background-gym-dressed-sport-clothes_7870b930.jpg"
+                alt="Olympic lifting floor at Hyperfit Indiranagar"
+                className="w-full h-full object-cover filter contrast-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--theme-bg)] via-transparent to-black/30" />
+
+              {/* Status Tags inside Frame */}
+              <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                <span className="px-2.5 py-1 rounded bg-black/60 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white uppercase tracking-wider font-semibold">
+                  STRENGTH BAY 02
+                </span>
+                <span className="px-2.5 py-1 rounded bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] text-[10px] font-mono font-bold tracking-wider uppercase">
+                  ACTIVE
+                </span>
+              </div>
+
+              {/* Bottom Caption Overlay */}
+              <div className="absolute bottom-4 left-4 right-4 text-left">
+                <div className="text-[10px] font-mono tracking-widest text-[var(--theme-accent)] uppercase mb-1">
+                  CALIBRATED PLATFORMS
+                </div>
+                <div className="font-heading text-lg font-bold text-white leading-snug">
+                  Engineered for serious athletes and dedicated newcomers.
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Metrics Underneath */}
+            <div className="mt-3 pt-3 px-1 border-t border-[var(--theme-border)] flex items-center justify-between text-[11px] font-mono text-[var(--theme-text-muted)]">
+              <span>FACILITY ID: HYPER-BLR-01</span>
+              <span className="text-[var(--theme-text-main)] font-bold">LIMITED TO 250 MEMBERS</span>
+            </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Down Arrow Motion Animation Icon */}
+      {/* Down Arrow / Section Navigation */}
       <motion.div
-        initial={{ opacity: 0, y: 25 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 1.15, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10 w-full flex justify-center"
+        transition={{ duration: 0.6, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
+        className="relative z-10 w-full flex justify-center pt-2"
       >
         <ScrollArrow
           variant="hero"

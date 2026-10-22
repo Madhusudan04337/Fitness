@@ -128,9 +128,6 @@ export default function Pricing() {
       id="pricing"
       className="relative w-full py-20 lg:py-28 px-6 lg:px-12 bg-[var(--theme-bg)] text-[var(--theme-text-main)] overflow-hidden transition-colors duration-300"
     >
-      {/* Background Ambience Subtle Accents */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[radial-gradient(ellipse_at_center,var(--theme-accent-glow)_0,transparent_70%)] pointer-events-none rounded-full" />
-
       <div className="relative max-w-7xl mx-auto flex flex-col items-center">
         {/* Section Header */}
         <div className="text-center max-w-3xl mb-12">
@@ -175,13 +172,13 @@ export default function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.36, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-8 inline-flex items-center p-1.5 rounded-full bg-[var(--theme-surface)] border border-[var(--theme-border)] backdrop-blur-md shadow-lg"
+            className="mt-8 inline-flex items-center p-1.5 rounded-full bg-[var(--theme-surface)] border border-[var(--theme-border)] backdrop-blur-md shadow-xs"
           >
             <button
               onClick={() => setBillingCycle('monthly')}
               className={`relative px-5 py-2 rounded-full text-xs font-mono font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer ${
                 billingCycle === 'monthly'
-                  ? 'bg-[var(--theme-surface-solid)] text-[var(--theme-text-main)] shadow-md border border-[var(--theme-border)]'
+                  ? 'bg-[var(--theme-surface-solid)] text-[var(--theme-text-main)] shadow-sm border border-[var(--theme-border)]'
                   : 'text-[var(--theme-text-muted)] hover:text-[var(--theme-text-main)]'
               }`}
             >
@@ -192,7 +189,7 @@ export default function Pricing() {
               onClick={() => setBillingCycle('annual')}
               className={`relative px-5 py-2 rounded-full text-xs font-mono font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer flex items-center gap-2 ${
                 billingCycle === 'annual'
-                  ? 'bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] shadow-[0_0_20px_var(--theme-accent-glow)]'
+                  ? 'bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] shadow-xs'
                   : 'text-[var(--theme-text-muted)] hover:text-[var(--theme-text-main)]'
               }`}
             >
@@ -231,15 +228,15 @@ export default function Pricing() {
                 whileHover={{ y: -6 }}
                 className={`relative flex flex-col justify-between rounded-2xl p-7 lg:p-8 transition-all duration-300 ${
                   tier.highlight
-                    ? 'bg-[var(--theme-surface)] border-2 border-[var(--theme-accent)] shadow-[0_0_40px_var(--theme-accent-glow)]'
-                    : 'bg-[var(--theme-surface)] border border-[var(--theme-border)] hover:border-[var(--theme-accent)]'
+                    ? 'bg-[var(--theme-surface)] border-2 border-[var(--theme-accent)] shadow-md'
+                    : 'bg-[var(--theme-surface)] border border-[var(--theme-border)] hover:border-[var(--theme-accent)] shadow-xs'
                 }`}
               >
                 {/* Highlight Badge */}
                 {tier.badge && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap">
                     <span
-                      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-widest uppercase shadow-lg ${
+                      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-widest uppercase shadow-sm ${
                         tier.highlight
                           ? 'bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)]'
                           : 'bg-[var(--theme-surface-solid)] text-[var(--theme-text-muted)] border border-[var(--theme-border)]'
@@ -329,9 +326,9 @@ export default function Pricing() {
                     onClick={() => handleOpenModal(tier)}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`w-full py-3.5 px-5 rounded-xl font-heading text-xs font-black tracking-widest uppercase transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg ${
+                    className={`w-full py-3.5 px-5 rounded-xl font-mono text-xs font-bold tracking-widest uppercase transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs ${
                       tier.highlight
-                        ? 'bg-[var(--theme-accent)] hover:brightness-110 text-[var(--theme-accent-contrast)] shadow-[0_0_25px_var(--theme-accent-glow)]'
+                        ? 'bg-[var(--theme-accent)] hover:brightness-105 text-[var(--theme-accent-contrast)]'
                         : 'bg-[var(--theme-surface-solid)] hover:border-[var(--theme-accent)] text-[var(--theme-text-main)] border border-[var(--theme-border)]'
                     }`}
                   >
@@ -495,7 +492,7 @@ export default function Pricing() {
                         type="submit"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="w-full py-3.5 px-6 rounded-xl bg-[var(--theme-accent)] hover:brightness-110 text-[var(--theme-accent-contrast)] font-heading text-xs font-black tracking-widest uppercase transition-all shadow-[0_0_20px_var(--theme-accent-glow)] cursor-pointer flex items-center justify-center gap-2"
+                        className="w-full py-3.5 px-6 rounded-xl bg-[var(--theme-accent)] hover:brightness-105 text-[var(--theme-accent-contrast)] font-mono text-xs font-bold tracking-widest uppercase transition-all shadow-xs cursor-pointer flex items-center justify-center gap-2"
                       >
                         <CreditCard className="w-4 h-4 stroke-[2.5]" />
                         <span>CONFIRM MEMBERSHIP INQUIRY</span>
@@ -543,7 +540,7 @@ export default function Pricing() {
                   <div className="mt-6">
                     <button
                       onClick={handleCloseModal}
-                      className="w-full py-3 px-6 rounded-xl bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] border border-[var(--theme-border)] text-[var(--theme-text-main)] font-heading text-xs font-black tracking-widest uppercase transition-colors cursor-pointer"
+                      className="w-full py-3 px-6 rounded-xl bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] border border-[var(--theme-border)] text-[var(--theme-text-main)] font-mono text-xs font-bold tracking-widest uppercase transition-colors cursor-pointer"
                     >
                       CLOSE WINDOW
                     </button>

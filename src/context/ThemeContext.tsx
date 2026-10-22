@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-export type ThemeId = 'onyx-gold' | 'nordic-emerald' | 'crimson-coral' | 'alabaster-light';
+export type ThemeId = 'atelier-clay' | 'nordic-slate' | 'chalk-editorial' | 'carbon-mono';
 
 export interface ThemeOption {
   id: ThemeId;
@@ -12,32 +12,32 @@ export interface ThemeOption {
 
 export const THEME_OPTIONS: ThemeOption[] = [
   {
-    id: 'onyx-gold',
-    name: 'Onyx & Gold',
-    tagline: 'Luxury Athletic Club',
-    colorSwatch: '#E5A93C',
+    id: 'atelier-clay',
+    name: 'Atelier Clay',
+    tagline: 'Warm Graphite & Terracotta',
+    colorSwatch: '#E06338',
     isDark: true,
   },
   {
-    id: 'nordic-emerald',
+    id: 'nordic-slate',
     name: 'Nordic Slate',
-    tagline: 'Bio-Recovery & Mint',
-    colorSwatch: '#10B981',
+    tagline: 'Alpine Stone & Sage',
+    colorSwatch: '#2D9377',
     isDark: true,
   },
   {
-    id: 'crimson-coral',
-    name: 'Crimson Peak',
-    tagline: 'High-Energy Performance',
-    colorSwatch: '#E11D48',
-    isDark: true,
-  },
-  {
-    id: 'alabaster-light',
-    name: 'Studio Daylight',
-    tagline: 'Clean Minimalist Light',
-    colorSwatch: '#B45309',
+    id: 'chalk-editorial',
+    name: 'Chalk Editorial',
+    tagline: 'Swiss Minimalist Light',
+    colorSwatch: '#D1392B',
     isDark: false,
+  },
+  {
+    id: 'carbon-mono',
+    name: 'Carbon Brutalist',
+    tagline: 'Matte Black & Raw Silver',
+    colorSwatch: '#E2E4E9',
+    isDark: true,
   },
 ];
 
@@ -57,7 +57,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         return saved;
       }
     }
-    return 'onyx-gold';
+    return 'atelier-clay';
   });
 
   const setTheme = (newTheme: ThemeId) => {
@@ -65,7 +65,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     if (typeof window !== 'undefined') {
       localStorage.setItem('hyperfit-theme', newTheme);
       document.documentElement.setAttribute('data-theme', newTheme);
-      if (newTheme === 'alabaster-light') {
+      if (newTheme === 'chalk-editorial') {
         document.documentElement.classList.remove('dark');
       } else {
         document.documentElement.classList.add('dark');
@@ -75,7 +75,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    if (theme === 'alabaster-light') {
+    if (theme === 'chalk-editorial') {
       document.documentElement.classList.remove('dark');
     } else {
       document.documentElement.classList.add('dark');

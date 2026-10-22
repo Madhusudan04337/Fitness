@@ -62,8 +62,8 @@ export default function DesktopPageNav() {
       aria-label="Desktop Section Navigation"
       className="hidden xl:flex fixed right-6 top-1/2 -translate-y-1/2 z-40 flex-col items-center gap-3 select-none"
     >
-      {/* Background Pill */}
-      <div className="flex flex-col items-center gap-2 p-2.5 rounded-full bg-[var(--theme-surface)] border border-[var(--theme-border)] backdrop-blur-md shadow-2xl">
+      {/* Background Architectural Bar */}
+      <div className="flex flex-col items-center gap-2 p-2 rounded-full bg-[var(--theme-surface)] border border-[var(--theme-border)] backdrop-blur-md shadow-lg">
         {pages.map((page) => {
           const isActive = page.id === activeId;
           return (
@@ -77,7 +77,7 @@ export default function DesktopPageNav() {
               <AnimatePresence>
                 {hoveredId === page.id && (
                   <motion.div
-                    initial={{ opacity: 0, x: -10 }}
+                    initial={{ opacity: 0, x: -8 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -6 }}
                     transition={{ duration: 0.15 }}
@@ -92,18 +92,18 @@ export default function DesktopPageNav() {
               {/* Indicator button */}
               <button
                 onClick={() => scrollToSection(page.id)}
-                aria-label={`Jump to page ${page.number}: ${page.label}`}
+                aria-label={`Jump to section ${page.number}: ${page.label}`}
                 className="group relative flex items-center justify-center w-7 h-7 rounded-full transition-all cursor-pointer focus:outline-none"
               >
                 {isActive ? (
                   <motion.div
                     layoutId="activeDot"
-                    className="w-4 h-4 rounded-full bg-[var(--theme-accent)] flex items-center justify-center shadow-[0_0_12px_var(--theme-accent)]"
+                    className="w-3.5 h-3.5 rounded-full bg-[var(--theme-accent)] flex items-center justify-center"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[var(--theme-accent-contrast)]" />
                   </motion.div>
                 ) : (
-                  <div className="w-2 h-2 rounded-full bg-[var(--theme-text-muted)] opacity-40 group-hover:opacity-90 group-hover:scale-125 transition-all" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[var(--theme-text-muted)] opacity-30 group-hover:opacity-90 group-hover:scale-125 transition-all" />
                 )}
               </button>
             </div>
@@ -113,30 +113,25 @@ export default function DesktopPageNav() {
         {/* Divider */}
         <div className="w-4 h-px bg-[var(--theme-border)] my-1" />
 
-        {/* Animated Down / Next Page Button with bounce */}
+        {/* Animated Down / Next Page Button */}
         <motion.button
           onClick={scrollToNext}
-          title={nextSection ? `Fold to ${nextSection.label}` : 'Back to Top'}
+          title={nextSection ? `Scroll to ${nextSection.label}` : 'Back to Top'}
           aria-label="Next section"
-          className="relative w-8 h-8 rounded-full bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] flex items-center justify-center hover:brightness-110 transition-all shadow-lg cursor-pointer focus:outline-none mt-1"
-          whileHover={{ scale: 1.15 }}
-          whileTap={{ scale: 0.9 }}
+          className="relative w-7 h-7 rounded-full bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] flex items-center justify-center hover:brightness-105 transition-all shadow-xs cursor-pointer focus:outline-none"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
         >
           {nextSection ? (
-            <motion.div
-              animate={{ y: [0, 3, 0] }}
-              transition={{ repeat: Infinity, duration: 1.4, ease: 'easeInOut' }}
-            >
-              <ChevronDown className="w-4 h-4 stroke-[3]" />
-            </motion.div>
+            <ChevronDown className="w-4 h-4 stroke-[2.5]" />
           ) : (
-            <ArrowUp className="w-4 h-4 stroke-[3]" />
+            <ArrowUp className="w-4 h-4 stroke-[2.5]" />
           )}
         </motion.button>
       </div>
 
       {/* Floating active page indicator text */}
-      <div className="text-[9px] font-mono tracking-widest text-[var(--theme-text-muted)] font-bold bg-[var(--theme-surface)] px-2.5 py-0.5 rounded-full border border-[var(--theme-border)] backdrop-blur-sm">
+      <div className="text-[9px] font-mono tracking-widest text-[var(--theme-text-muted)] font-bold bg-[var(--theme-surface)] px-2.5 py-0.5 rounded-full border border-[var(--theme-border)] backdrop-blur-sm shadow-xs">
         {pages[currentIndex]?.number || '01'} / {pages[pages.length - 1].number}
       </div>
     </aside>
