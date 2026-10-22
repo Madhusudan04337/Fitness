@@ -21,7 +21,7 @@ export default function FoldSection({
   return (
     <div
       id={id}
-      className={`relative w-full bg-neutral-950 ${className}`}
+      className={`relative w-full bg-[var(--theme-bg)] transition-colors duration-300 ${className}`}
     >
       <div className="relative w-full">
         {children}

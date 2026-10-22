@@ -9,51 +9,88 @@ const features = [
 
 export default function ServicesShowcase() {
   return (
-    <section id="showcase" className="py-12 lg:py-16 px-6 bg-neutral-950 text-white">
+    <section id="showcase" className="py-16 lg:py-24 px-6 bg-[var(--theme-bg)] text-[var(--theme-text-main)] overflow-hidden transition-colors duration-300">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Left Side - Hero Content */}
         <div>
-          <div className="text-neutral-500 text-xs font-mono tracking-[0.25em] mb-3 uppercase">Beyond the Gym // Lifestyle</div>
-          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-black mb-4 tracking-tight leading-[1.05]">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="text-[var(--theme-accent)] text-xs font-mono tracking-[0.25em] mb-3 uppercase font-semibold"
+          >
+            COMMUNITY & LIFESTYLE
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+            className="font-heading text-4xl sm:text-5xl lg:text-6xl font-black mb-4 tracking-tight leading-[1.05]"
+          >
             A WHOLE <br />
-            <span className="text-[#FF6B00]">LIFE</span> APPROACH.
-          </h2>
-          <p className="text-neutral-400 mb-8 max-w-md text-base md:text-lg leading-relaxed font-light">
-            We believe structured training is the foundation, but high-impact recovery, nutritional discipline, and community form the actual ecosystem of human performance.
-          </p>
-          <div className="flex flex-wrap gap-4">
+            <span className="text-[var(--theme-accent)]">LIFE</span> APPROACH.
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.65, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
+            className="text-[var(--theme-text-muted)] mb-8 max-w-md text-base md:text-lg leading-relaxed font-light"
+          >
+            Great training is just the beginning. Our recovery facilities, expert guidance, and supportive community keep you inspired every day.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.36, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-wrap gap-4"
+          >
             <a
               href="#coaches"
-              className="font-heading px-7 py-3.5 bg-[#FF6B00] text-black font-black rounded-sm text-xs tracking-wider uppercase hover:bg-[#FFA500] transition-colors"
+              className="font-heading px-7 py-3.5 bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] font-black rounded-lg text-xs tracking-wider uppercase hover:brightness-110 transition-all shadow-md cursor-pointer"
             >
               MEET OUR COACHES
             </a>
             <a
               href="#testimonials"
-              className="font-heading px-7 py-3.5 border border-neutral-700 bg-neutral-900/60 text-white font-bold rounded-sm text-xs tracking-wider uppercase hover:bg-neutral-800 transition-colors"
+              className="font-heading px-7 py-3.5 border border-[var(--theme-border)] bg-[var(--theme-surface)] text-[var(--theme-text-main)] font-bold rounded-lg text-xs tracking-wider uppercase hover:border-[var(--theme-accent)] transition-colors cursor-pointer"
             >
-              MEMBER VOICES
+              MEMBER STORIES
             </a>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Right Side - List */}
+        {/* Right Side - List Cards animated one by one */}
         <div className="flex flex-col gap-5">
-          {features.map((feature) => (
+          {features.map((feature, index) => (
             <motion.div
               key={feature.id}
-              className="group p-6 rounded-xl border border-neutral-800/80 bg-neutral-900/40 hover:bg-neutral-900/80 transition-all cursor-default"
-              whileHover={{ x: 8, borderColor: 'rgba(255,107,0,0.4)' }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.15,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="group p-6 rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] transition-all cursor-default shadow-sm"
+              whileHover={{ x: 8 }}
             >
               <div className="flex justify-between items-start mb-2">
-                <h3 className="font-heading text-2xl font-black text-white group-hover:text-[#FF6B00] transition-colors tracking-tight">
+                <h3 className="font-heading text-2xl font-black text-[var(--theme-text-main)] group-hover:text-[var(--theme-accent)] transition-colors tracking-tight">
                   {feature.title}
                 </h3>
-                <span className="font-mono text-4xl font-black text-neutral-700 group-hover:text-white transition-colors">
+                <span className="font-mono text-4xl font-black text-[var(--theme-text-muted)] opacity-30 group-hover:opacity-100 group-hover:text-[var(--theme-accent)] transition-all">
                   {feature.id}
                 </span>
               </div>
-              <p className="text-neutral-400 text-sm leading-relaxed">{feature.description}</p>
+              <p className="text-[var(--theme-text-muted)] text-sm leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
         </div>

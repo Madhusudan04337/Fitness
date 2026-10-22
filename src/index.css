@@ -1,5 +1,90 @@
 @import "tailwindcss";
 
+/* Theme Variable Declarations */
+:root, [data-theme="onyx-gold"] {
+  --theme-bg: #090a0d;
+  --theme-bg-subtle: #0e1015;
+  --theme-surface: rgba(18, 20, 27, 0.72);
+  --theme-surface-solid: #12141b;
+  --theme-surface-hover: rgba(26, 29, 39, 0.85);
+  --theme-border: rgba(255, 255, 255, 0.08);
+  --theme-border-hover: rgba(229, 169, 60, 0.45);
+  --theme-accent: #E5A93C;
+  --theme-accent-hover: #F3C068;
+  --theme-accent-contrast: #090a0d;
+  --theme-accent-glow: rgba(229, 169, 60, 0.28);
+  --theme-accent-badge: rgba(229, 169, 60, 0.12);
+  --theme-accent-subtle: rgba(229, 169, 60, 0.18);
+  --theme-text-main: #f8fafc;
+  --theme-text-muted: #94a3b8;
+  --theme-text-subtle: #64748b;
+  --theme-selection-bg: #E5A93C;
+  --theme-selection-text: #000000;
+}
+
+[data-theme="nordic-emerald"] {
+  --theme-bg: #060b0f;
+  --theme-bg-subtle: #0b131a;
+  --theme-surface: rgba(13, 23, 31, 0.72);
+  --theme-surface-solid: #0f1922;
+  --theme-surface-hover: rgba(19, 34, 46, 0.85);
+  --theme-border: rgba(255, 255, 255, 0.08);
+  --theme-border-hover: rgba(16, 185, 129, 0.45);
+  --theme-accent: #10B981;
+  --theme-accent-hover: #34D399;
+  --theme-accent-contrast: #060b0f;
+  --theme-accent-glow: rgba(16, 185, 129, 0.28);
+  --theme-accent-badge: rgba(16, 185, 129, 0.12);
+  --theme-accent-subtle: rgba(16, 185, 129, 0.18);
+  --theme-text-main: #f8fafc;
+  --theme-text-muted: #94a3b8;
+  --theme-text-subtle: #64748b;
+  --theme-selection-bg: #10B981;
+  --theme-selection-text: #000000;
+}
+
+[data-theme="crimson-coral"] {
+  --theme-bg: #09090b;
+  --theme-bg-subtle: #111114;
+  --theme-surface: rgba(22, 22, 27, 0.72);
+  --theme-surface-solid: #16161b;
+  --theme-surface-hover: rgba(30, 30, 38, 0.85);
+  --theme-border: rgba(255, 255, 255, 0.08);
+  --theme-border-hover: rgba(225, 29, 72, 0.45);
+  --theme-accent: #E11D48;
+  --theme-accent-hover: #FB7185;
+  --theme-accent-contrast: #ffffff;
+  --theme-accent-glow: rgba(225, 29, 72, 0.28);
+  --theme-accent-badge: rgba(225, 29, 72, 0.14);
+  --theme-accent-subtle: rgba(225, 29, 72, 0.2);
+  --theme-text-main: #f8fafc;
+  --theme-text-muted: #94a3b8;
+  --theme-text-subtle: #64748b;
+  --theme-selection-bg: #E11D48;
+  --theme-selection-text: #ffffff;
+}
+
+[data-theme="alabaster-light"] {
+  --theme-bg: #faf9f6;
+  --theme-bg-subtle: #f2efe9;
+  --theme-surface: rgba(255, 255, 255, 0.85);
+  --theme-surface-solid: #ffffff;
+  --theme-surface-hover: rgba(245, 243, 239, 0.95);
+  --theme-border: rgba(0, 0, 0, 0.09);
+  --theme-border-hover: rgba(180, 83, 9, 0.4);
+  --theme-accent: #B45309;
+  --theme-accent-hover: #D97706;
+  --theme-accent-contrast: #ffffff;
+  --theme-accent-glow: rgba(180, 83, 9, 0.22);
+  --theme-accent-badge: rgba(180, 83, 9, 0.1);
+  --theme-accent-subtle: rgba(180, 83, 9, 0.14);
+  --theme-text-main: #0f172a;
+  --theme-text-muted: #64748b;
+  --theme-text-subtle: #94a3b8;
+  --theme-selection-bg: #B45309;
+  --theme-selection-text: #ffffff;
+}
+
 /* Hide spin buttons from number inputs */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -14,12 +99,22 @@ input[type=number]::-webkit-outer-spin-button {
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--theme-bg);
+  color: var(--theme-text-main);
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 body {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  background-color: var(--theme-bg);
+  color: var(--theme-text-main);
+}
+
+::selection {
+  background-color: var(--theme-selection-bg);
+  color: var(--theme-selection-text);
 }
 
 .font-heading {
@@ -32,4 +127,49 @@ body {
 
 .font-mono {
   font-family: 'JetBrains Mono', monospace;
+}
+
+/* Semantic Theme Helper Classes */
+.theme-bg-main {
+  background-color: var(--theme-bg);
+}
+
+.theme-bg-subtle {
+  background-color: var(--theme-bg-subtle);
+}
+
+.theme-surface {
+  background-color: var(--theme-surface);
+  backdrop-filter: blur(12px);
+}
+
+.theme-surface-solid {
+  background-color: var(--theme-surface-solid);
+}
+
+.theme-border {
+  border-color: var(--theme-border);
+}
+
+.theme-border-hover:hover {
+  border-color: var(--theme-border-hover);
+}
+
+.theme-accent-text {
+  color: var(--theme-accent);
+}
+
+.theme-accent-bg {
+  background-color: var(--theme-accent);
+  color: var(--theme-accent-contrast);
+}
+
+.theme-accent-badge {
+  background-color: var(--theme-accent-badge);
+  color: var(--theme-accent);
+  border-color: var(--theme-accent-subtle);
+}
+
+.theme-accent-glow {
+  box-shadow: 0 0 25px var(--theme-accent-glow);
 }

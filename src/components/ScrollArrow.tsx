@@ -37,7 +37,7 @@ export default function ScrollArrow({
         >
           {/* Subtle pulse ring around arrow */}
           <motion.div
-            className="absolute -inset-2 rounded-full border border-[#FF6B00]/40 pointer-events-none"
+            className="absolute -inset-2 rounded-full border border-[var(--theme-accent)]/40 pointer-events-none"
             animate={{
               scale: [1, 1.4, 1],
               opacity: [0.6, 0, 0.6],
@@ -51,7 +51,7 @@ export default function ScrollArrow({
 
           {/* Button circle with icon */}
           <motion.div
-            className="relative w-12 h-12 rounded-full bg-neutral-900/90 border border-neutral-700/80 group-hover:border-[#FF6B00] group-hover:bg-[#FF6B00]/10 flex items-center justify-center text-white group-hover:text-[#FF6B00] transition-colors shadow-lg backdrop-blur-sm"
+            className="relative w-12 h-12 rounded-full bg-[var(--theme-surface)] border border-[var(--theme-border)] group-hover:border-[var(--theme-accent)] group-hover:bg-[var(--theme-accent-badge)] flex items-center justify-center text-[var(--theme-text-main)] group-hover:text-[var(--theme-accent)] transition-all shadow-lg backdrop-blur-md"
             whileHover={{ scale: 1.12 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -65,15 +65,15 @@ export default function ScrollArrow({
                 ease: 'easeInOut',
               }}
             >
-              <ChevronDown className="w-5 h-5 text-[#FF6B00]" strokeWidth={2.5} />
+              <ChevronDown className="w-5 h-5 text-[var(--theme-accent)]" strokeWidth={2.5} />
             </motion.div>
           </motion.div>
 
           {/* Micro text label */}
           <div className="mt-3 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B00] animate-ping" />
-            <span className="text-[10px] font-mono tracking-[0.25em] text-neutral-400 group-hover:text-white transition-colors uppercase">
-              {label} {pageNumber && <span className="text-neutral-500">[{pageNumber}]</span>}
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--theme-accent)] animate-ping" />
+            <span className="text-[10px] font-mono tracking-[0.2em] text-[var(--theme-text-muted)] group-hover:text-[var(--theme-text-main)] transition-colors uppercase">
+              {label} {pageNumber && <span className="opacity-60 font-normal">({pageNumber})</span>}
             </span>
           </div>
         </button>
@@ -86,9 +86,9 @@ export default function ScrollArrow({
       <button
         onClick={handleClick}
         aria-label="Fold to next section"
-        className="group inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-neutral-900/80 border border-neutral-800/90 hover:border-[#FF6B00]/60 hover:bg-neutral-800/80 transition-all cursor-pointer backdrop-blur-sm shadow-md"
+        className="group inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-[var(--theme-surface)] border border-[var(--theme-border)] hover:border-[var(--theme-accent)] transition-all cursor-pointer backdrop-blur-md shadow-sm"
       >
-        <span className="text-[11px] font-mono tracking-widest text-neutral-400 group-hover:text-neutral-200 transition-colors uppercase">
+        <span className="text-[11px] font-mono tracking-widest text-[var(--theme-text-muted)] group-hover:text-[var(--theme-text-main)] transition-colors uppercase">
           {label}
         </span>
         <motion.div
@@ -100,7 +100,7 @@ export default function ScrollArrow({
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="w-5 h-5 rounded-full bg-[#FF6B00]/10 border border-[#FF6B00]/30 flex items-center justify-center text-[#FF6B00] group-hover:bg-[#FF6B00] group-hover:text-black transition-colors"
+          className="w-5 h-5 rounded-full bg-[var(--theme-accent-badge)] border border-[var(--theme-accent)]/30 flex items-center justify-center text-[var(--theme-accent)] group-hover:bg-[var(--theme-accent)] group-hover:text-[var(--theme-accent-contrast)] transition-colors"
         >
           <ChevronDown className="w-3.5 h-3.5" strokeWidth={2.5} />
         </motion.div>

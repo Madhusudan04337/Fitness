@@ -9,7 +9,7 @@ export default function StickyScrollSection() {
   ];
 
   return (
-    <section className="flex flex-col md:flex-row h-screen bg-neutral-950 overflow-hidden">
+    <section className="flex flex-col md:flex-row h-screen bg-[var(--theme-bg)] text-[var(--theme-text-main)] overflow-hidden transition-colors duration-300">
       {/* Sticky Left Image */}
       <div className="w-full md:w-1/2 h-1/2 md:h-screen sticky top-0">
         <img 
@@ -30,8 +30,8 @@ export default function StickyScrollSection() {
               viewport={{ amount: 0.5 }}
               className="min-h-[50vh] flex flex-col justify-center"
             >
-              <h2 className="text-5xl font-extrabold mb-6 text-white tracking-tight">{item.title}</h2>
-              <p className="text-xl text-neutral-400 leading-relaxed">{item.desc}</p>
+              <h2 className="text-5xl font-extrabold mb-6 text-[var(--theme-text-main)] tracking-tight">{item.title}</h2>
+              <p className="text-xl text-[var(--theme-text-muted)] leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>

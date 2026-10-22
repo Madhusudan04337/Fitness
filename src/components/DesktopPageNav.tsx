@@ -9,15 +9,16 @@ export interface PageItem {
 }
 
 const pages: PageItem[] = [
-  { id: 'hero', number: '01', label: 'Overview' },
-  { id: 'about', number: '02', label: 'Philosophy & Hub' },
-  { id: 'services', number: '03', label: 'Services Matrix' },
-  { id: 'showcase', number: '04', label: 'Beyond The Gym' },
-  { id: 'testimonials', number: '05', label: 'Member Stories' },
-  { id: 'coaches', number: '06', label: 'Master Coaches' },
-  { id: 'calculator', number: '07', label: 'Performance Metric' },
-  { id: 'faq', number: '08', label: 'Intelligence / FAQ' },
-  { id: 'contact', number: '09', label: 'Global Hubs' },
+  { id: 'hero', number: '01', label: 'Welcome' },
+  { id: 'about', number: '02', label: 'About Us' },
+  { id: 'services', number: '03', label: 'Our Services' },
+  { id: 'showcase', number: '04', label: 'Community' },
+  { id: 'pricing', number: '05', label: 'Pricing Plans' },
+  { id: 'testimonials', number: '06', label: 'Member Stories' },
+  { id: 'coaches', number: '07', label: 'Coaches' },
+  { id: 'calculator', number: '08', label: 'BMI Calculator' },
+  { id: 'faq', number: '09', label: 'FAQ' },
+  { id: 'contact', number: '10', label: 'Contact & Hubs' },
 ];
 
 export default function DesktopPageNav() {
@@ -62,8 +63,8 @@ export default function DesktopPageNav() {
       className="hidden xl:flex fixed right-6 top-1/2 -translate-y-1/2 z-40 flex-col items-center gap-3 select-none"
     >
       {/* Background Pill */}
-      <div className="flex flex-col items-center gap-2 p-2.5 rounded-full bg-neutral-950/80 border border-neutral-800/80 backdrop-blur-md shadow-2xl">
-        {pages.map((page, idx) => {
+      <div className="flex flex-col items-center gap-2 p-2.5 rounded-full bg-[var(--theme-surface)] border border-[var(--theme-border)] backdrop-blur-md shadow-2xl">
+        {pages.map((page) => {
           const isActive = page.id === activeId;
           return (
             <div
@@ -80,9 +81,9 @@ export default function DesktopPageNav() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -6 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute right-9 px-3 py-1 rounded bg-neutral-900 border border-neutral-700 text-[10px] font-mono tracking-widest text-white whitespace-nowrap shadow-xl pointer-events-none z-50 flex items-center gap-2"
+                    className="absolute right-9 px-3 py-1 rounded-lg bg-[var(--theme-surface-solid)] border border-[var(--theme-border)] text-[10px] font-mono tracking-widest text-[var(--theme-text-main)] whitespace-nowrap shadow-xl pointer-events-none z-50 flex items-center gap-2"
                   >
-                    <span className="text-[#FF6B00]">{page.number}</span>
+                    <span className="text-[var(--theme-accent)] font-bold">{page.number}</span>
                     <span className="uppercase">{page.label}</span>
                   </motion.div>
                 )}
@@ -97,12 +98,12 @@ export default function DesktopPageNav() {
                 {isActive ? (
                   <motion.div
                     layoutId="activeDot"
-                    className="w-4 h-4 rounded-full bg-[#FF6B00] flex items-center justify-center shadow-[0_0_12px_#FF6B00]"
+                    className="w-4 h-4 rounded-full bg-[var(--theme-accent)] flex items-center justify-center shadow-[0_0_12px_var(--theme-accent)]"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-black" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--theme-accent-contrast)]" />
                   </motion.div>
                 ) : (
-                  <div className="w-2 h-2 rounded-full bg-neutral-600 group-hover:bg-neutral-300 group-hover:scale-125 transition-all" />
+                  <div className="w-2 h-2 rounded-full bg-[var(--theme-text-muted)] opacity-40 group-hover:opacity-90 group-hover:scale-125 transition-all" />
                 )}
               </button>
             </div>
@@ -110,14 +111,14 @@ export default function DesktopPageNav() {
         })}
 
         {/* Divider */}
-        <div className="w-4 h-px bg-neutral-800 my-1" />
+        <div className="w-4 h-px bg-[var(--theme-border)] my-1" />
 
         {/* Animated Down / Next Page Button with bounce */}
         <motion.button
           onClick={scrollToNext}
           title={nextSection ? `Fold to ${nextSection.label}` : 'Back to Top'}
           aria-label="Next section"
-          className="relative w-8 h-8 rounded-full bg-[#FF6B00] hover:bg-[#FFA500] text-black flex items-center justify-center transition-colors shadow-lg cursor-pointer focus:outline-none mt-1"
+          className="relative w-8 h-8 rounded-full bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] flex items-center justify-center hover:brightness-110 transition-all shadow-lg cursor-pointer focus:outline-none mt-1"
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.9 }}
         >
@@ -135,7 +136,7 @@ export default function DesktopPageNav() {
       </div>
 
       {/* Floating active page indicator text */}
-      <div className="text-[9px] font-mono tracking-widest text-neutral-400 font-bold bg-neutral-900/70 px-2 py-0.5 rounded border border-neutral-800/60 backdrop-blur-sm">
+      <div className="text-[9px] font-mono tracking-widest text-[var(--theme-text-muted)] font-bold bg-[var(--theme-surface)] px-2.5 py-0.5 rounded-full border border-[var(--theme-border)] backdrop-blur-sm">
         {pages[currentIndex]?.number || '01'} / {pages[pages.length - 1].number}
       </div>
     </aside>
