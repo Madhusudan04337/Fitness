@@ -193,7 +193,7 @@ export default function Pricing() {
             return (
               <div
                 key={tier.id}
-                className={`relative flex flex-col justify-between rounded-2xl p-7 lg:p-8 hover:-translate-y-1.5 transition-all duration-200 ${
+                className={`relative flex flex-col justify-between rounded-2xl p-7 lg:p-8 athletic-card ${
                   tier.highlight
                     ? 'bg-[var(--theme-surface)] border-2 border-[var(--theme-accent)] shadow-md'
                     : 'bg-[var(--theme-surface)] border border-[var(--theme-border)] hover:border-[var(--theme-accent)] shadow-xs'
@@ -293,7 +293,7 @@ export default function Pricing() {
                     onClick={() => handleOpenModal(tier)}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`w-full py-3.5 px-5 rounded-xl font-mono text-xs font-bold tracking-widest uppercase transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs ${
+                    className={`w-full py-3.5 px-5 rounded-xl font-mono text-xs font-bold tracking-widest uppercase transition-all flex items-center justify-center gap-2 cursor-pointer athletic-btn shadow-xs ${
                       tier.highlight
                         ? 'bg-[var(--theme-accent)] hover:brightness-105 text-[var(--theme-accent-contrast)]'
                         : 'bg-[var(--theme-surface-solid)] hover:border-[var(--theme-accent)] text-[var(--theme-text-main)] border border-[var(--theme-border)]'

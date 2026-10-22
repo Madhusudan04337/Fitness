@@ -67,7 +67,7 @@ export default function FitnessCalculator() {
 
           <button
             onClick={calculateBMI}
-            className="font-mono w-full bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] px-6 py-4 font-black rounded-xl text-sm tracking-widest uppercase hover:brightness-110 active:scale-[0.99] transition-all cursor-pointer shadow-lg"
+            className="font-mono w-full bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] px-6 py-4 font-black rounded-xl text-sm tracking-widest uppercase hover:brightness-110 athletic-btn cursor-pointer shadow-lg"
           >
             CALCULATE YOUR BMI
           </button>

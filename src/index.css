@@ -120,15 +120,62 @@ body {
 }
 
 .font-heading {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: 'Barlow Condensed', 'Space Grotesk', system-ui, sans-serif;
+  letter-spacing: -0.015em;
+}
+
+.font-athletic {
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: -0.01em;
 }
 
 .font-editorial {
-  font-family: 'Newsreader', Georgia, serif;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.font-quote {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 .font-mono {
   font-family: 'JetBrains Mono', monospace;
+  font-feature-settings: 'tnum' 1, 'zero' 1;
+}
+
+/* Fitness Athletic Kinetic Transitions */
+.athletic-btn {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.18s ease, filter 0.18s ease;
+}
+.athletic-btn:active {
+  transform: scale(0.97);
+}
+
+.athletic-card {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease, box-shadow 0.22s ease;
+}
+.athletic-card:hover {
+  transform: translateY(-4px);
+}
+
+@keyframes live-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
+.animate-live-pulse {
+  animation: live-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 /* Semantic Theme Helper Classes */

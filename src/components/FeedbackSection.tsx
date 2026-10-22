@@ -278,7 +278,7 @@ export default function FeedbackSection() {
               {/* Submit CTA */}
               <button
                 type="submit"
-                className="w-full py-4 rounded-xl bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] font-mono font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-lg cursor-pointer hover:brightness-105 active:scale-[0.99] transition-all"
+                className="w-full py-4 rounded-xl bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] font-mono font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-lg cursor-pointer hover:brightness-105 athletic-btn"
               >
                 <Send className="w-4 h-4" />
                 TRANSMIT FEEDBACK TO MANAGEMENT

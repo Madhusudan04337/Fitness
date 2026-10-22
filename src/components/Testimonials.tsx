@@ -51,7 +51,7 @@ export default function Testimonials() {
           {testimonials.map((item) => (
             <div
               key={item.name}
-              className="relative p-7 rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] hover:-translate-y-1.5 transition-all duration-200 flex flex-col justify-between shadow-sm cursor-default"
+              className="relative p-7 rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] flex flex-col justify-between shadow-sm cursor-default athletic-card"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -60,7 +60,7 @@ export default function Testimonials() {
                   </div>
                   <Quote className="w-5 h-5 text-[var(--theme-accent)] opacity-70" />
                 </div>
-                <p className="font-editorial italic text-lg md:text-xl text-[var(--theme-text-main)] leading-relaxed mb-6 opacity-90">
+                <p className="font-quote text-base sm:text-lg text-[var(--theme-text-main)] leading-relaxed mb-6 opacity-95">
                   "{item.quote}"
                 </p>
               </div>

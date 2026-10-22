@@ -64,7 +64,7 @@ export default function CompanyTrustAndAbout() {
       {/* 4. Editorial Showcase Cards Grid */}
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mt-8 sm:mt-10">
         {/* Left Column - Large Card */}
-        <div className="group relative overflow-hidden rounded-2xl h-[320px] sm:h-[400px] md:h-[500px] border border-[var(--theme-border)] bg-[var(--theme-surface)] shadow-lg hover:border-[var(--theme-accent)] transition-all">
+        <div className="group relative overflow-hidden rounded-2xl h-[320px] sm:h-[400px] md:h-[500px] border border-[var(--theme-border)] bg-[var(--theme-surface)] shadow-lg hover:border-[var(--theme-accent)] athletic-card">
           <img
             src="/assets/aistudio/young-fitness-man-studio_d2399ba3.jpg"
             alt="Indiranagar Performance Hub"
@@ -83,7 +83,7 @@ export default function CompanyTrustAndAbout() {
 
         {/* Right Column - Stacked Cards */}
         <div className="flex flex-col gap-5 sm:gap-6">
-          <div className="group relative overflow-hidden rounded-2xl h-[190px] sm:h-[238px] border border-[var(--theme-border)] bg-[var(--theme-surface)] shadow-lg hover:border-[var(--theme-accent)] transition-all">
+          <div className="group relative overflow-hidden rounded-2xl h-[190px] sm:h-[238px] border border-[var(--theme-border)] bg-[var(--theme-surface)] shadow-lg hover:border-[var(--theme-accent)] athletic-card">
             <img
               src="/assets/aistudio/full-body-portrait-athletic-shirtless-male-doing-biceps-workouts-with-dumbbells-gym-club_7e7045cb.jpg"
               alt="Mindful Movement"
@@ -99,7 +99,7 @@ export default function CompanyTrustAndAbout() {
             </div>
           </div>
 
-          <div className="group relative overflow-hidden rounded-2xl h-[190px] sm:h-[238px] border border-[var(--theme-border)] bg-[var(--theme-surface)] shadow-lg hover:border-[var(--theme-accent)] transition-all">
+          <div className="group relative overflow-hidden rounded-2xl h-[190px] sm:h-[238px] border border-[var(--theme-border)] bg-[var(--theme-surface)] shadow-lg hover:border-[var(--theme-accent)] athletic-card">
             <img
               src="/assets/aistudio/young-sportive-man-is-doing-exercises-with-dumbbells-empty-gym-club_a3ab2b9a.jpg"
               alt="Restoration & Recovery"

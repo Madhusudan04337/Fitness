@@ -25,7 +25,7 @@ export default function Hero() {
 
           <div className="flex items-center gap-3 sm:gap-4 text-[10px]">
             <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-live-pulse" />
               <span>FLOOR OPEN (06:00 – 23:00)</span>
             </span>
             <span className="hidden md:inline opacity-50">|</span>
@@ -43,69 +43,67 @@ export default function Hero() {
             <span className="opacity-40">// ATHLETIC ATELIER</span>
           </div>
 
-          <h1 className="font-heading text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[0.96] mb-5 sm:mb-6 uppercase text-[var(--theme-text-main)]">
+          <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[0.92] mb-5 sm:mb-6 uppercase text-[var(--theme-text-main)]">
             DISCIPLINE <br />
-            <span className="text-[var(--theme-accent)]">IN FORM.</span> <br />
+            <span className="text-[var(--theme-accent)] italic">IN FORM.</span> <br />
             RECOVERY <br />
-            IN SCIENCE.
+            <span className="italic">IN SCIENCE.</span>
           </h1>
 
           <p className="text-sm sm:text-base lg:text-lg text-[var(--theme-text-muted)] max-w-xl mb-6 sm:mb-8 leading-relaxed font-light">
             A high-standard training collective built for purposeful lifting, metabolic conditioning, and cold-contrast recovery. Zero crowded floor, zero commercial distraction.
           </p>
 
-          {/* Action CTAs: Full-width on mobile, auto on desktop */}
+          {/* Action CTAs: Kinetic Athletic Buttons */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-10 w-full">
-            <motion.a
+            <a
               href="#pricing"
-              className="w-full sm:w-auto px-7 py-3.5 bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] font-mono font-bold rounded-lg text-xs tracking-widest uppercase flex items-center justify-center gap-2 hover:brightness-105 transition-all shadow-xs cursor-pointer"
-              {...hoverEffect}
+              className="group w-full sm:w-auto px-7 py-3.5 bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] font-mono font-bold rounded-lg text-xs tracking-widest uppercase flex items-center justify-center gap-2 hover:brightness-105 athletic-btn shadow-xs cursor-pointer"
             >
               EXPLORE MEMBERSHIPS
-              <ArrowUpRight className="w-4 h-4" />
-            </motion.a>
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
 
-            <motion.a
+            <a
               href="#services"
-              className="w-full sm:w-auto px-7 py-3.5 border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-text-muted)] text-[var(--theme-text-main)] font-mono font-bold rounded-lg text-xs tracking-widest uppercase flex items-center justify-center gap-2 transition-all cursor-pointer"
-              {...hoverEffect}
+              className="group w-full sm:w-auto px-7 py-3.5 border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-text-muted)] text-[var(--theme-text-main)] font-mono font-bold rounded-lg text-xs tracking-widest uppercase flex items-center justify-center gap-2 athletic-btn cursor-pointer"
             >
-              <Compass className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
+              <Compass className="w-3.5 h-3.5 text-[var(--theme-accent)] group-hover:rotate-45 transition-transform" />
               VIEW SERVICES
-            </motion.a>
+            </a>
           </div>
 
           {/* Architectural Specifications Strip */}
           <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-5 sm:pt-6 border-t border-[var(--theme-border)] max-w-xl">
             <div>
-              <div className="font-mono text-[11px] sm:text-xs text-[var(--theme-accent)] font-bold">ELEIKO RIGS</div>
-              <div className="text-[10px] sm:text-[11px] text-[var(--theme-text-muted)] mt-0.5">Olympic calibrated bars</div>
+              <div className="font-heading text-lg sm:text-xl text-[var(--theme-accent)] font-black tracking-tight">ELEIKO RIGS</div>
+              <div className="text-[10px] sm:text-[11px] text-[var(--theme-text-muted)] mt-0.5 font-mono">Olympic calibrated bars</div>
             </div>
             <div>
-              <div className="font-mono text-[11px] sm:text-xs text-[var(--theme-accent)] font-bold">4°C PLUNGE</div>
-              <div className="text-[10px] sm:text-[11px] text-[var(--theme-text-muted)] mt-0.5">Active cold recovery</div>
+              <div className="font-heading text-lg sm:text-xl text-[var(--theme-accent)] font-black tracking-tight">4°C PLUNGE</div>
+              <div className="text-[10px] sm:text-[11px] text-[var(--theme-text-muted)] mt-0.5 font-mono">Active cold recovery</div>
             </div>
             <div>
-              <div className="font-mono text-[11px] sm:text-xs text-[var(--theme-accent)] font-bold">1-ON-1 COACH</div>
-              <div className="text-[10px] sm:text-[11px] text-[var(--theme-text-muted)] mt-0.5">Custom programming</div>
+              <div className="font-heading text-lg sm:text-xl text-[var(--theme-accent)] font-black tracking-tight">1-ON-1 COACH</div>
+              <div className="text-[10px] sm:text-[11px] text-[var(--theme-text-muted)] mt-0.5 font-mono">Custom programming</div>
             </div>
           </div>
         </div>
 
         {/* Right Column: Architectural Framed Showcase Card */}
         <div className="lg:col-span-5 relative">
-          <div className="relative rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] p-3 overflow-hidden shadow-xl">
+          <div className="relative rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] p-3 overflow-hidden shadow-xl athletic-card">
             {/* Technical Crosshairs */}
             <span className="absolute top-2 left-2 text-[10px] font-mono text-[var(--theme-text-muted)] opacity-40">+</span>
             <span className="absolute top-2 right-2 text-[10px] font-mono text-[var(--theme-text-muted)] opacity-40">+</span>
             <span className="absolute bottom-2 left-2 text-[10px] font-mono text-[var(--theme-text-muted)] opacity-40">+</span>
             <span className="absolute bottom-2 right-2 text-[10px] font-mono text-[var(--theme-text-muted)] opacity-40">+</span>
 
-            <div className="relative rounded-xl overflow-hidden aspect-[4/5] bg-[var(--theme-surface-solid)]">
+            <div className="relative rounded-xl overflow-hidden aspect-[4/5] bg-[var(--theme-surface-solid)] group">
               <img
                 src="/assets/aistudio/young-beautiful-woman-doing-exercise-with-bar-gym-athletic-girl-doing-workout-fitness-center-dark-background-gym-dressed-sport-clothes_7870b930.jpg"
                 alt="Olympic lifting floor at Hyperfit Indiranagar"
-                className="w-full h-full object-cover filter contrast-110"
+                className="w-full h-full object-cover filter contrast-110 group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--theme-bg)] via-transparent to-black/30" />
 
@@ -114,7 +112,8 @@ export default function Hero() {
                 <span className="px-2.5 py-1 rounded bg-black/60 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white uppercase tracking-wider font-semibold">
                   STRENGTH BAY 02
                 </span>
-                <span className="px-2.5 py-1 rounded bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] text-[10px] font-mono font-bold tracking-wider uppercase">
+                <span className="px-2.5 py-1 rounded bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] text-[10px] font-mono font-bold tracking-wider uppercase flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-live-pulse" />
                   ACTIVE
                 </span>
               </div>
@@ -124,7 +123,7 @@ export default function Hero() {
                 <div className="text-[10px] font-mono tracking-widest text-[var(--theme-accent)] uppercase mb-1">
                   CALIBRATED PLATFORMS
                 </div>
-                <div className="font-heading text-lg font-bold text-white leading-snug">
+                <div className="font-heading text-xl sm:text-2xl font-black text-white leading-tight uppercase">
                   Engineered for serious athletes and dedicated newcomers.
                 </div>
               </div>

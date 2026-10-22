@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, ArrowUp } from 'lucide-react';
+import { fastSmoothScrollTo } from '../utils/smoothScroll';
 
 export interface PageItem {
   id: string;
@@ -50,14 +51,14 @@ export default function DesktopPageNav() {
 
   const scrollToNext = () => {
     if (nextSection) {
-      document.getElementById(nextSection.id)?.scrollIntoView({ behavior: 'smooth' });
+      fastSmoothScrollTo(nextSection.id);
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      fastSmoothScrollTo(0);
     }
   };
 
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    fastSmoothScrollTo(id);
   };
 
   return (

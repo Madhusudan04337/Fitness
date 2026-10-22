@@ -47,7 +47,7 @@ export default function Coaches() {
           {coaches.map((coach) => (
             <div
               key={coach.name}
-              className="group rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] hover:-translate-y-1.5 overflow-hidden transition-all duration-200 shadow-sm cursor-default"
+              className="group rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] overflow-hidden shadow-sm cursor-default athletic-card"
             >
               <div className="relative w-full h-72 overflow-hidden bg-[var(--theme-surface-solid)]">
                 <img

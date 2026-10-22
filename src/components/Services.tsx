@@ -57,16 +57,16 @@ export default function Services() {
           <div className="flex flex-wrap items-center gap-4 mb-8">
             <a
               href="#pricing"
-              className="font-heading inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] font-black text-xs tracking-wider uppercase hover:brightness-110 transition-all shadow-md cursor-pointer"
+              className="font-heading inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] font-black text-xs tracking-wider uppercase hover:brightness-110 athletic-btn shadow-md cursor-pointer"
             >
               EXPLORE PRICING
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <button
               onClick={() => {
                 document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="font-heading inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[var(--theme-border)] bg-[var(--theme-surface)] text-[var(--theme-text-main)] font-bold text-xs tracking-wider uppercase hover:border-[var(--theme-accent)] transition-colors cursor-pointer"
+              className="font-heading inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[var(--theme-border)] bg-[var(--theme-surface)] text-[var(--theme-text-main)] font-bold text-xs tracking-wider uppercase hover:border-[var(--theme-accent)] athletic-btn transition-colors cursor-pointer"
             >
               TOUR FACILITY
               <Play className="w-3 h-3 fill-current text-[var(--theme-accent)]" />
@@ -74,7 +74,7 @@ export default function Services() {
           </div>
 
           <div className="p-4 rounded-xl border border-[var(--theme-border)] bg-[var(--theme-surface)] text-[var(--theme-text-muted)] text-xs flex items-center gap-2 shadow-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--theme-accent)]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--theme-accent)] animate-live-pulse" />
             <span>Comprehensive coaching, nutrition, and recovery under one roof.</span>
           </div>
         </div>
@@ -84,7 +84,7 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.id}
-              className="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] hover:translate-x-1.5 transition-all duration-200 shadow-sm gap-6 cursor-default"
+              className="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] hover:translate-x-1.5 transition-all duration-200 shadow-sm gap-6 cursor-default athletic-card"
             >
               <div className="flex items-center gap-5 flex-1">
                 <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-[var(--theme-border)]">

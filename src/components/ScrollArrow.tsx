@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
+import { fastSmoothScrollTo } from '../utils/smoothScroll';
 
 interface ScrollArrowProps {
   targetId?: string;
@@ -20,10 +21,7 @@ export default function ScrollArrow({
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     if (targetId) {
-      const el = document.getElementById(targetId);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      fastSmoothScrollTo(targetId);
     }
   };
 

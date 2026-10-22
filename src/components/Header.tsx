@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence, useScroll } from 'motion/react';
 import { Menu, X, ArrowUpRight, Compass, Dumbbell, ShieldCheck, HelpCircle, Activity, MessageSquare } from 'lucide-react';
 import ThemeSelector from './ThemeSelector';
+import { fastSmoothScrollTo } from '../utils/smoothScroll';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,11 +20,7 @@ export default function Header() {
 
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
-    const id = href.replace('#', '');
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    fastSmoothScrollTo(href);
   };
 
   return (

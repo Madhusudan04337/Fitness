@@ -28,13 +28,13 @@ export default function ServicesShowcase() {
           <div className="flex flex-wrap gap-4">
             <a
               href="#coaches"
-              className="font-heading px-7 py-3.5 bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] font-black rounded-lg text-xs tracking-wider uppercase hover:brightness-110 transition-all shadow-md cursor-pointer"
+              className="font-heading px-7 py-3.5 bg-[var(--theme-accent)] text-[var(--theme-accent-contrast)] font-black rounded-lg text-xs tracking-wider uppercase hover:brightness-110 athletic-btn shadow-md cursor-pointer"
             >
               MEET OUR COACHES
             </a>
             <a
               href="#testimonials"
-              className="font-heading px-7 py-3.5 border border-[var(--theme-border)] bg-[var(--theme-surface)] text-[var(--theme-text-main)] font-bold rounded-lg text-xs tracking-wider uppercase hover:border-[var(--theme-accent)] transition-colors cursor-pointer"
+              className="font-heading px-7 py-3.5 border border-[var(--theme-border)] bg-[var(--theme-surface)] text-[var(--theme-text-main)] font-bold rounded-lg text-xs tracking-wider uppercase hover:border-[var(--theme-accent)] athletic-btn transition-colors cursor-pointer"
             >
               MEMBER STORIES
             </a>
@@ -46,7 +46,7 @@ export default function ServicesShowcase() {
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="group p-6 rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] hover:translate-x-1.5 transition-all duration-200 cursor-default shadow-sm"
+              className="group p-6 rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] transition-all duration-200 cursor-default shadow-sm athletic-card"
             >
               <div className="flex justify-between items-start mb-2">
                 <h3 className="font-heading text-2xl font-black text-[var(--theme-text-main)] group-hover:text-[var(--theme-accent)] transition-colors tracking-tight">
