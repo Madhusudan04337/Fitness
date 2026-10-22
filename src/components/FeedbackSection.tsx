@@ -80,7 +80,7 @@ export default function FeedbackSection() {
         <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[var(--theme-surface)] border border-[var(--theme-border)] text-[11px] font-mono tracking-[0.25em] text-[var(--theme-accent)] uppercase mb-3 shadow-xs">
             <MessageSquare className="w-3.5 h-3.5" />
-            <span>ATHLETE VOICE // PROTOCOL</span>
+            <span>MEMBER FEEDBACK & SUGGESTIONS</span>
           </div>
 
           <h2 className="font-heading text-3xl sm:text-5xl font-black uppercase tracking-tight text-[var(--theme-text-main)] leading-tight mb-4">
@@ -292,7 +292,7 @@ export default function FeedbackSection() {
               </div>
 
               <div className="text-[10px] font-mono tracking-widest text-[var(--theme-accent)] uppercase mb-1 font-bold">
-                DISPATCH CONFIRMED // {dispatchReceipt}
+                SUBMISSION CONFIRMED - REF: {dispatchReceipt}
               </div>
 
               <h3 className="font-heading text-2xl sm:text-3xl font-black uppercase text-[var(--theme-text-main)] mb-3">

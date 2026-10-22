@@ -39,8 +39,7 @@ export default function Hero() {
         {/* Left Column: Bold Typography & Purpose */}
         <div className="lg:col-span-7 flex flex-col text-left">
           <div className="inline-flex items-center gap-2 mb-3 sm:mb-4 text-xs font-mono font-bold tracking-[0.25em] text-[var(--theme-accent)] uppercase">
-            <span>[ SYSTEM PROTOCOL 01 ]</span>
-            <span className="opacity-40">// ATHLETIC ATELIER</span>
+            <span>PREMIER STRENGTH & RECOVERY COLLECTIVE</span>
           </div>
 
           <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[0.92] mb-5 sm:mb-6 uppercase text-[var(--theme-text-main)]">
@@ -103,6 +102,8 @@ export default function Hero() {
               <img
                 src="/assets/aistudio/young-beautiful-woman-doing-exercise-with-bar-gym-athletic-girl-doing-workout-fitness-center-dark-background-gym-dressed-sport-clothes_7870b930.jpg"
                 alt="Olympic lifting floor at Hyperfit Indiranagar"
+                loading="eager"
+                fetchPriority="high"
                 className="w-full h-full object-cover filter contrast-110 group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--theme-bg)] via-transparent to-black/30" />
