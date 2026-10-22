@@ -18,6 +18,7 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import FoldSection from './components/FoldSection';
 import DesktopPageNav from './components/DesktopPageNav';
+import InteractiveTrainingWidget from './components/InteractiveTrainingWidget';
 import { ThemeProvider } from './context/ThemeContext';
 
 export default function App() {
@@ -56,6 +57,7 @@ export default function App() {
           >
             <Services />
             <ServicesShowcase />
+            <InteractiveTrainingWidget />
           </FoldSection>
 
           {/* Section 03: Pricing Protocols */}
