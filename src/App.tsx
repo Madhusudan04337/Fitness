@@ -12,6 +12,7 @@ import ServicesShowcase from './components/ServicesShowcase';
 import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
 import Coaches from './components/Coaches';
+import FeedbackSection from './components/FeedbackSection';
 import FitnessCalculator from './components/FitnessCalculator';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
@@ -79,6 +80,9 @@ export default function App() {
             <Testimonials />
             <div id="coaches">
               <Coaches />
+            </div>
+            <div id="feedback">
+              <FeedbackSection />
             </div>
           </FoldSection>
 

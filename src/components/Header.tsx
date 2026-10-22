@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence, useScroll } from 'motion/react';
-import { Menu, X, ArrowUpRight, Compass, Dumbbell, ShieldCheck, HelpCircle, Activity } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Compass, Dumbbell, ShieldCheck, HelpCircle, Activity, MessageSquare } from 'lucide-react';
 import ThemeSelector from './ThemeSelector';
 
 export default function Header() {
@@ -116,17 +116,24 @@ export default function Header() {
               ))}
 
               {/* Extra Utility Links */}
-              <div className="pt-3 grid grid-cols-2 gap-2">
+              <div className="pt-3 grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <button
+                  onClick={() => handleNavClick('#feedback')}
+                  className="p-3 rounded-xl bg-[var(--theme-surface)] border border-[var(--theme-border)] text-left hover:border-[var(--theme-accent)] transition-colors text-xs font-mono text-[var(--theme-text-muted)] hover:text-[var(--theme-text-main)] flex items-center gap-2 cursor-pointer"
+                >
+                  <MessageSquare className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
+                  <span>Member Feedback</span>
+                </button>
                 <button
                   onClick={() => handleNavClick('#calculator')}
-                  className="p-3 rounded-xl bg-[var(--theme-surface)] border border-[var(--theme-border)] text-left hover:border-[var(--theme-accent)] transition-colors text-xs font-mono text-[var(--theme-text-muted)] hover:text-[var(--theme-text-main)] flex items-center gap-2"
+                  className="p-3 rounded-xl bg-[var(--theme-surface)] border border-[var(--theme-border)] text-left hover:border-[var(--theme-accent)] transition-colors text-xs font-mono text-[var(--theme-text-muted)] hover:text-[var(--theme-text-main)] flex items-center gap-2 cursor-pointer"
                 >
                   <Activity className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
                   <span>BMI Calculator</span>
                 </button>
                 <button
                   onClick={() => handleNavClick('#contact')}
-                  className="p-3 rounded-xl bg-[var(--theme-surface)] border border-[var(--theme-border)] text-left hover:border-[var(--theme-accent)] transition-colors text-xs font-mono text-[var(--theme-text-muted)] hover:text-[var(--theme-text-main)] flex items-center gap-2"
+                  className="p-3 rounded-xl bg-[var(--theme-surface)] border border-[var(--theme-border)] text-left hover:border-[var(--theme-accent)] transition-colors text-xs font-mono text-[var(--theme-text-muted)] hover:text-[var(--theme-text-main)] flex items-center gap-2 cursor-pointer"
                 >
                   <Compass className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
                   <span>Locations & Hours</span>

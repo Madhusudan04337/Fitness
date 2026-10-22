@@ -35,6 +35,7 @@ export default function Footer() {
             <li><a href="#services" className="hover:text-[var(--theme-accent)] transition-colors">Our Services</a></li>
             <li><a href="#pricing" className="hover:text-[var(--theme-accent)] transition-colors">Membership Plans</a></li>
             <li><a href="#coaches" className="hover:text-[var(--theme-accent)] transition-colors">Expert Coaches</a></li>
+            <li><a href="#feedback" className="hover:text-[var(--theme-accent)] transition-colors">Member Feedback</a></li>
             <li><a href="#calculator" className="hover:text-[var(--theme-accent)] transition-colors">BMI Calculator</a></li>
           </ul>
         </div>
